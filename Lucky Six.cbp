@@ -53,6 +53,7 @@
 		</Linker>
 		<Unit filename="include/Loptica.h" />
 		<Unit filename="include/Random.h" />
+		<Unit filename="include/Texts.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="sfml-audio-2.dll" />
 		<Unit filename="sfml-audio-d-2.dll" />
@@ -66,6 +67,7 @@
 		<Unit filename="sfml-window-d-2.dll" />
 		<Unit filename="src/Loptica.cpp" />
 		<Unit filename="src/Random.cpp" />
+		<Unit filename="src/Texts.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

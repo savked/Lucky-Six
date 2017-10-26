@@ -2,11 +2,8 @@
 
 Loptica::Loptica()
 {
-    m_ft.loadFromFile("fonts/arial.ttf");
     for(int i = 0; i < 35; i++)
     {
-        m_tx[i].setFont(m_ft);
-
         m_body[i].setRadius(30.0f);
         m_body[i].setFillColor(sf::Color(128,128,128,220));
         m_body[i].setOutlineColor(sf::Color(200,200,200, 255));
@@ -47,5 +44,7 @@ void Loptica::Draw(sf::RenderWindow &m_window)
     for(int i = 0; i < 35; i++)
     {
         m_window.draw(m_body[i]);
+        Texts odds;
+        odds.DrawText(m_window);
     }
 }

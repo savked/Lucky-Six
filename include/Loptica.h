@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<SFML/Graphics.hpp>
+#include "Texts.h"
 
 class Loptica
 {
@@ -12,9 +13,6 @@ public:
 
 private:
     sf::CircleShape m_body[35];
-    sf::Text m_tx[35];
-    sf::Font m_ft;
-
 };
 
 #endif // LOPTICA_H
