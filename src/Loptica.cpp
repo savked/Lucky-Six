@@ -2,6 +2,13 @@
 
 Loptica::Loptica()
 {
+    txD.loadFromFile("slike/detelina.png");
+
+    detelina1.setTexture(txD);
+    detelina2.setTexture(txD);
+
+    RandomDet(detelina1, detelina2);
+
     for(int i = 0; i < 35; i++)
     {
         m_body[i].setRadius(30.0f);
@@ -39,12 +46,41 @@ Loptica::Loptica()
         }
     }
 }
+void Loptica::RandomDet(sf::Sprite &d1, sf::Sprite &d2)
+{
+    srand(time(NULL));
+
+    float xPozicije[30] = {84.0f, 84.0f, 84.0f, 84.0f, 84.0f, 84.0f, 84.0f, 84.0f, 84.0f};
+    float yPozicije[30] = {103.0f, 204.0f, 304.0f, 404.0f, 504.0f, 604.0f, 704.0f, 804.0f, 904.0f};
+
+    int rd1X = rand() % 9 + 0; // promeniti na 30 kad se unesu sve moguce pozicije
+    int rd1Y = rand() % 9 + 0; // ----------------------||------------------------
+
+    int rd2X = rand() % 9 + 0;
+    int rd2Y = rand() % 9 + 0;
+
+    if(rd1X == rd2X && rd1Y == rd2Y)
+    {
+        rd1X = rand() % 9 + 0;
+        rd1Y = rand() % 9 + 0;
+
+        rd2X = rand() % 9 + 0;
+        rd2Y = rand() % 9 + 0;
+    }
+
+    d1.setPosition(sf::Vector2f(xPozicije[rd1X], yPozicije[rd1Y]));
+    d2.setPosition(sf::Vector2f(xPozicije[rd2X], yPozicije[rd2Y]));
+}
 void Loptica::Draw(sf::RenderWindow &m_window)
 {
+
     for(int i = 0; i < 35; i++)
     {
         m_window.draw(m_body[i]);
         Texts odds;
         odds.DrawText(m_window);
     }
+
+    m_window.draw(detelina1);
+    m_window.draw(detelina2);
 }

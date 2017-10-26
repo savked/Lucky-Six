@@ -1,9 +1,11 @@
 # depslib dependency file v1.0
-1509039384 source:c:\users\savke\documents\sfml projects\lucky six\src\loptica.cpp
+1509061212 source:c:\users\savke\documents\sfml projects\lucky six\src\loptica.cpp
 	"Loptica.h"
 
-1509039240 c:\users\savke\documents\sfml projects\lucky six\include\loptica.h
+1509061039 c:\users\savke\documents\sfml projects\lucky six\include\loptica.h
 	<iostream>
+	<cstdlib>
+	<ctime>
 	<SFML/Graphics.hpp>
 	"Texts.h"
 
@@ -11,7 +13,7 @@
 	"Random.h"
 	<ctime>
 
-1508882099 c:\users\savke\documents\sfml projects\lucky six\include\random.h
+1509053418 c:\users\savke\documents\sfml projects\lucky six\include\random.h
 	<random>
 
 1509037098 source:c:\users\savke\documents\sfml projects\lucky six\main.cpp
@@ -409,6 +411,6 @@
 1509041328 c:\users\savke\documents\sfml projects\lucky six\include\texts.h
 	<SFML/Graphics.hpp>
 
-1509041363 source:c:\users\savke\documents\sfml projects\lucky six\src\texts.cpp
+1509042093 source:c:\users\savke\documents\sfml projects\lucky six\src\texts.cpp
 	"Texts.h"
 

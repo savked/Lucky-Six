@@ -12,8 +12,8 @@ class Random
         Random(const Random& other) = delete;
         Random(Random&& other) = delete;
 
-        Random& operator =(const Random& other) = delete;
-        Random& operator =(Random&& other) = delete;
+        Random& operator = (const Random& other) = delete;
+        Random& operator = (Random&& other) = delete;
 
     private:
         Random();
