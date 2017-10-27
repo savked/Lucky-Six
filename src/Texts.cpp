@@ -45,7 +45,7 @@ Texts::Texts()
 
         m_tx[i].setPosition(sf::Vector2f(155.0f, m_tx[i-1].getPosition().y + 100.0f));
         if(i == 9 || i == 12 || i == 15 || i == 18)
-            m_tx[i].setPosition(sf::Vector2f(m_tx[i-1].getPosition().x + 200.0f, 710.0f));
+            m_tx[i].setPosition(sf::Vector2f(m_tx[i-1].getPosition().x + 220.0f, 710.0f));
         else
             m_tx[i].setPosition(sf::Vector2f(m_tx[i-1].getPosition().x, m_tx[i-1].getPosition().y + 100.0f));
         if(i > 20 && i <= 30)

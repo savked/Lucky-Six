@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1509061212 source:c:\users\savke\documents\sfml projects\lucky six\src\loptica.cpp
+1509120217 source:c:\users\savke\documents\sfml projects\lucky six\src\loptica.cpp
 	"Loptica.h"
 
 1509061039 c:\users\savke\documents\sfml projects\lucky six\include\loptica.h
@@ -411,6 +411,6 @@
 1509041328 c:\users\savke\documents\sfml projects\lucky six\include\texts.h
 	<SFML/Graphics.hpp>
 
-1509042093 source:c:\users\savke\documents\sfml projects\lucky six\src\texts.cpp
+1509119497 source:c:\users\savke\documents\sfml projects\lucky six\src\texts.cpp
 	"Texts.h"
 
