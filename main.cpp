@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include "Loptica.h"
+#include <Loptica.h>
+#include <Izvlacenje.h>
 
 int main()
 {
@@ -14,10 +15,8 @@ int main()
     sf::Sprite bg;
     bg.setTexture(tx);
 
-    // resajzovanje slike na window size
-    //bg.setScale(window.getSize().x, window.getSize().y);
-
     Loptica l;
+    Izvlacenje iz;
 
     while (window.isOpen())
     {
@@ -29,9 +28,16 @@ int main()
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                 window.close();
         }
+
+
+        // TOK IGRE
+
+
         window.clear();
         window.draw(bg);
+        iz.Draw(window);
         l.Draw(window);
+
         window.display();
     }
 

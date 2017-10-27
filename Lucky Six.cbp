@@ -51,8 +51,8 @@
 		<Linker>
 			<Add directory="C:/Program Files (x86)/SFML-2.4.2/lib" />
 		</Linker>
+		<Unit filename="include/Izvlacenje.h" />
 		<Unit filename="include/Loptica.h" />
-		<Unit filename="include/Random.h" />
 		<Unit filename="include/Texts.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="sfml-audio-2.dll" />
@@ -65,8 +65,8 @@
 		<Unit filename="sfml-system-d-2.dll" />
 		<Unit filename="sfml-window-2.dll" />
 		<Unit filename="sfml-window-d-2.dll" />
+		<Unit filename="src/Izvlacenje.cpp" />
 		<Unit filename="src/Loptica.cpp" />
-		<Unit filename="src/Random.cpp" />
 		<Unit filename="src/Texts.cpp" />
 		<Extensions>
 			<code_completion />

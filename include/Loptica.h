@@ -4,8 +4,9 @@
 #include<iostream>
 #include<cstdlib>
 #include<ctime>
+
 #include<SFML/Graphics.hpp>
-#include "Texts.h"
+#include<Texts.h>
 
 class Loptica
 {
@@ -17,10 +18,10 @@ public:
 private:
     sf::CircleShape m_body[35];
 
-    sf::Texture txD;
+    sf::Texture m_txD;
 
-    sf::Sprite detelina1;
-    sf::Sprite detelina2;
+    sf::Sprite m_detelina1;
+    sf::Sprite m_detelina2;
 };
 
 #endif // LOPTICA_H
