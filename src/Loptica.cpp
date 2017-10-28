@@ -110,8 +110,6 @@ void Loptica::RandomDet(sf::Sprite &d1, sf::Sprite &d2)
         d2.setPosition(sf::Vector2f(rd2X, yPozicije1[rd2Y]));
 
     }
-
-    // DODATI DA SE NE PONAVLJAJU DETELINE !
 }
 void Loptica::Draw(sf::RenderWindow &m_window)
 {
