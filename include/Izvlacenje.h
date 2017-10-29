@@ -7,7 +7,7 @@
 #include<iostream>
 #include<SFML/Graphics.hpp>
 
-class Izvlacenje : private Loptica
+class Izvlacenje : public Loptica
 {
 public:
     Izvlacenje();

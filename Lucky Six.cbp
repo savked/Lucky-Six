@@ -53,6 +53,7 @@
 		</Linker>
 		<Unit filename="include/Izvlacenje.h" />
 		<Unit filename="include/Loptica.h" />
+		<Unit filename="include/PocetniEkran.h" />
 		<Unit filename="include/Texts.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="sfml-audio-2.dll" />
@@ -67,6 +68,7 @@
 		<Unit filename="sfml-window-d-2.dll" />
 		<Unit filename="src/Izvlacenje.cpp" />
 		<Unit filename="src/Loptica.cpp" />
+		<Unit filename="src/PocetniEkran.cpp" />
 		<Unit filename="src/Texts.cpp" />
 		<Extensions>
 			<code_completion />
