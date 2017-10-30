@@ -37,16 +37,22 @@ int main()
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                 window.close();
 
-            enteredText.setPosition(460.0f, 600.0f);
+            enteredText.setPosition(460.0f, 405.0f);
             if (event.type == sf::Event::TextEntered)
             {
-                if (event.text.unicode < 128)
+                if (event.text.unicode == '\b')
+                {
+                    str.erase(str.size() - 1, 1);
+                    enteredText.setString(str);
+                }
+                else if (event.text.unicode < 128)
                 {
                     str += static_cast<char>(event.text.unicode);
                     enteredText.setString(str);
                 }
             }
         }
+        // enter - U+E007 // backspace - U+0008
 
         if (!tokIgre)
         {
