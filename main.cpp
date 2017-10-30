@@ -12,6 +12,7 @@ int main()
 
     sf::Texture tx;
     tx.loadFromFile("slike/bg.jpg");
+
     sf::Sprite bg;
     bg.setTexture(tx);
 
@@ -21,6 +22,12 @@ int main()
 
     //variables for main
     bool tokIgre = 0;
+    sf::Text enteredText;
+    sf::Font arial;
+    std::string str;
+    //////////
+    arial.loadFromFile("fonts/arial.ttf");
+    enteredText.setFont(arial);
 
     while (window.isOpen())
     {
@@ -29,13 +36,28 @@ int main()
         {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                 window.close();
+
+            enteredText.setPosition(460.0f, 600.0f);
+            if (event.type == sf::Event::TextEntered)
+            {
+                if (event.text.unicode < 128)
+                {
+                    str += static_cast<char>(event.text.unicode);
+                    enteredText.setString(str);
+                }
+            }
+        }
+
+        if (!tokIgre)
+        {
+            iz.Draw(window);
+            l.Draw(window);
         }
 
         window.clear();
         window.draw(bg);
         pe.Draw(window);
-        iz.Draw(window);
-        l.Draw(window);
+        window.draw(enteredText);
 
         window.display();
     }

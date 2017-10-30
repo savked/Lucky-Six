@@ -2,6 +2,7 @@
 #define POCETNIEKRAN_H
 
 #include<SFML/Graphics.hpp>
+#include<iostream>
 
 class PocetniEkran
 {
@@ -10,7 +11,11 @@ public:
     void Draw(sf::RenderWindow &m_window);
 
 private:
-    sf::RectangleShape m_rect;
+    sf::Texture m_box_tx;
+    sf::Text m_pwText;
+    sf::Text m_enteredText;
+    sf::Font m_ft;
+    sf::Sprite m_box;
 };
 
 #endif // POCETNIEKRAN_H

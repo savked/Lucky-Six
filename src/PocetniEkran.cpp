@@ -2,12 +2,22 @@
 
 PocetniEkran::PocetniEkran()
 {
-    m_rect.setScale(sf::Vector2f(20.0f, 10.0f));
-    m_rect.setFillColor(sf::Color::Red);
-    m_rect.setOutlineColor(sf::Color::White);
-    m_rect.setOutlineThickness(1.0f);
+    m_box_tx.loadFromFile("slike/box.png");
+    m_box.setTexture(m_box_tx);
+
+    m_ft.loadFromFile("fonts/arial.ttf");
+    m_pwText.setFont(m_ft);
+    m_enteredText.setFont(m_ft);
+
+    m_pwText.setString("Ukucaj password da bi pristupio programu"); // Enter password to get access
+    m_pwText.setPosition(sf::Vector2f(350.0f, 340.0f));
+
+    m_box.setPosition(sf::Vector2f(450.0f, 400.0f));
+    m_box.setColor(sf::Color::White);
 }
 void PocetniEkran::Draw(sf::RenderWindow &m_window)
 {
-    m_window.draw(m_rect);
+    m_window.draw(m_enteredText);
+    m_window.draw(m_box);
+    m_window.draw(m_pwText);
 }
