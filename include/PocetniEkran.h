@@ -9,13 +9,21 @@ class PocetniEkran
 public:
     PocetniEkran();
     void Draw(sf::RenderWindow &m_window);
+    int gameAccess(sf::Event &event, int tokIgre);
 
 private:
+    sf::Event event;
+    std::string str;
+
     sf::Texture m_box_tx;
+
     sf::Text m_pwText;
     sf::Text m_enteredText;
+
     sf::Font m_ft;
     sf::Sprite m_box;
+
+    sf::CircleShape m_cs;
 };
 
 #endif // POCETNIEKRAN_H

@@ -20,14 +20,8 @@ int main()
     Izvlacenje iz;
     PocetniEkran pe;
 
-    //variables for main
-    bool tokIgre = 0;
-    sf::Text enteredText;
-    sf::Font arial;
-    std::string str;
-    //////////
-    arial.loadFromFile("fonts/arial.ttf");
-    enteredText.setFont(arial);
+    // variables for main
+    int tokIgre = 0;
 
     while (window.isOpen())
     {
@@ -37,24 +31,11 @@ int main()
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                 window.close();
 
-            enteredText.setPosition(460.0f, 405.0f);
-            if (event.type == sf::Event::TextEntered)
-            {
-                if (event.text.unicode == '\b')
-                {
-                    str.erase(str.size() - 1, 1);
-                    enteredText.setString(str);
-                }
-                else if (event.text.unicode < 128)
-                {
-                    str += static_cast<char>(event.text.unicode);
-                    enteredText.setString(str);
-                }
-            }
+            pe.gameAccess(event, tokIgre);
         }
         // enter - U+E007 // backspace - U+0008
 
-        if (!tokIgre)
+        if(tokIgre == 1)
         {
             iz.Draw(window);
             l.Draw(window);
@@ -63,7 +44,6 @@ int main()
         window.clear();
         window.draw(bg);
         pe.Draw(window);
-        window.draw(enteredText);
 
         window.display();
     }
