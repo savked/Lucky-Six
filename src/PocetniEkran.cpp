@@ -19,7 +19,7 @@ PocetniEkran::PocetniEkran()
     m_cs.setPosition(sf::Vector2f(500.0f, 500.0f));
     m_cs.setFillColor(sf::Color::Cyan);
 }
-int PocetniEkran::gameAccess(sf::Event &event, int tokIgre)
+void PocetniEkran::gameAccess(sf::Event &event, int tokIgre)
 {
     m_enteredText.setFont(m_ft);
     m_enteredText.setPosition(460.0f, 405.0f);
@@ -43,7 +43,13 @@ int PocetniEkran::gameAccess(sf::Event &event, int tokIgre)
             if(m_cs.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
                 if(str == "123") // sifra // password
                 {
-                    return tokIgre = 1;
+                    m_flag = 0;
+
+                    m_pwText.setString("Loading ...");
+                    m_pwText.setColor(sf::Color::Green);
+                    m_pwText.setPosition(sf::Vector2f(550.0f, 450.0f));
+
+                    tokIgre = 1;
                 }
                 else
                 {
@@ -54,8 +60,16 @@ int PocetniEkran::gameAccess(sf::Event &event, int tokIgre)
 }
 void PocetniEkran::Draw(sf::RenderWindow &m_window)
 {
-    m_window.draw(m_enteredText);
-    m_window.draw(m_box);
-    m_window.draw(m_pwText);
-    m_window.draw(m_cs);
+    if(m_flag == 1)
+    {
+        m_window.draw(m_enteredText);
+        m_window.draw(m_box);
+        m_window.draw(m_pwText);
+        m_window.draw(m_cs);
+    }
+    else
+    {
+        m_window.draw(m_pwText);
+    }
+
 }
