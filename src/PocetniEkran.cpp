@@ -19,7 +19,7 @@ PocetniEkran::PocetniEkran()
     m_cs.setPosition(sf::Vector2f(500.0f, 500.0f));
     m_cs.setFillColor(sf::Color::Cyan);
 }
-void PocetniEkran::gameAccess(sf::Event &event, int tokIgre)
+/*int PocetniEkran::gameAccess(sf::Event &event, int tokIgre)
 {
     m_enteredText.setFont(m_ft);
     m_enteredText.setPosition(460.0f, 405.0f);
@@ -49,15 +49,17 @@ void PocetniEkran::gameAccess(sf::Event &event, int tokIgre)
                     m_pwText.setColor(sf::Color::Green);
                     m_pwText.setPosition(sf::Vector2f(550.0f, 450.0f));
 
-                    tokIgre = 1;
+                    return tokIgre = 1;
                 }
                 else
                 {
                     m_pwText.setString("Pogresna sifra, probaj ponovo");
                     m_pwText.setColor(sf::Color::Red);
+
+                    return tokIgre = 0;
                 }
     }
-}
+}*/
 void PocetniEkran::Draw(sf::RenderWindow &m_window)
 {
     if(m_flag == 1)

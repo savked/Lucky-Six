@@ -21,7 +21,7 @@ int main()
     PocetniEkran pe;
 
     // variables for main
-    int tokIgre = 0;
+    int tokIgre = 1;
 
     while (window.isOpen())
     {
@@ -31,19 +31,15 @@ int main()
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                 window.close();
 
-            pe.gameAccess(event, tokIgre);
-        }
-        // enter - U+E007 // backspace - U+0008
-
-        if(tokIgre == 1)
-        {
-            iz.Draw(window);
-            l.Draw(window);
+            //pe.gameAccess(event, tokIgre);
         }
 
         window.clear();
+
         window.draw(bg);
-        pe.Draw(window);
+        iz.Draw(window);
+        l.Draw(window);
+        //pe.Draw(window);
 
         window.display();
     }

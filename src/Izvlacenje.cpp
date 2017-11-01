@@ -8,15 +8,25 @@ Izvlacenje::Izvlacenje()
         s = to_string(i);
         m_tx[i].loadFromFile("slike/"+ s + ".png");
     }
-    // loadovanje texture u sprite
-    for(int i = 1; i <= 48; i++)
-    {
-        m_brojevi[i].setTexture(m_tx[i]);
-    }
 
+    srand(time(NULL));
+    int rd = rand() % 48 + 1;
+
+    // loadovanje texture u sprite
+    m_izvucenBroj.setPosition(sf::Vector2f(400.0f, 130.0f));
+    m_izvucenBroj.setTexture(m_tx[7]);
 }
+/*void Izvlacenje::Animacija()
+{
+}*/
 void Izvlacenje::Draw(sf::RenderWindow &m_window)
 {
-    m_window.draw(m_brojevi[13]);
+    m_window.draw(m_izvucenBroj);
 }
 
+std::string Izvlacenje::to_string(int i)
+{
+    std::stringstream ss;
+    ss << i;
+    return ss.str();
+}
