@@ -3,12 +3,16 @@
 #include<Izvlacenje.h>
 #include<PocetniEkran.h>
 
+const int SCREEN_WIDTH  = 1280;
+const int SCREEN_HEIGHT = 1024;
+
 int main()
 {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
 
-    sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Lucky Six!", sf::Style::Fullscreen, settings);
+    sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Lucky Six!", sf::Style::Fullscreen, settings);
+    window.setFramerateLimit(60);
 
     sf::Texture tx;
     tx.loadFromFile("slike/bg.jpg");
@@ -37,8 +41,9 @@ int main()
         window.clear();
 
         window.draw(bg);
-        iz.Draw(window);
         l.Draw(window);
+        iz.Draw(window);
+        iz.Animacija();
         //pe.Draw(window);
 
         window.display();
