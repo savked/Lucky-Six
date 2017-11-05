@@ -9,7 +9,9 @@ Loptica::Loptica()
 
     RandomDet(m_detelina1, m_detelina2);
 
-    for(int i = 0; i < 35; i++)
+    m_body.resize(35);
+
+    for(unsigned int i = 0; i < m_body.size(); i++)
     {
         m_body[i].setRadius(30.0f);
         m_body[i].setFillColor(sf::Color(128,128,128,200));

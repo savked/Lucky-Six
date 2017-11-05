@@ -17,7 +17,7 @@ public:
     void RandomDet(sf::Sprite &d1, sf::Sprite &d2);
 
 private:
-    sf::CircleShape m_body[35];
+    std::vector<sf::CircleShape> m_body;
 
     sf::Texture m_txD;
 

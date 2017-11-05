@@ -3,7 +3,8 @@
 
 #include<string>
 #include<cstdlib>
-#include<windows.h>
+#include<stack>
+#include<algorithm>
 #include<sstream>
 #include<iostream>
 #include<SFML/Graphics.hpp>
@@ -13,15 +14,19 @@ class Izvlacenje
 public:
     Izvlacenje();
 
-    void Animacija();
-    void Timer();
-    void Draw(sf::RenderWindow &m_window);
+    void Animacija(sf::RenderWindow &m_window);
+    //void Timer();
+
+
     std::string to_string(int i);
 
 private:
     std::string s;
+    std::vector<int> m_moguciBrojevi;
+
     sf::Texture m_tx[48]; // vece teksture
-    sf::Sprite m_izvucenBroj[48];
+    std::vector<sf::Sprite> m_izvucenBroj;
+
     //red,green,blue,purple,brown,yellow, orange, gray
 
 

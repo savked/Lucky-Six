@@ -40,7 +40,6 @@ Texts::Texts()
         m_tx[i].setFont(m_arial);
         m_tx[i].setScale(sf::Vector2f(0.80f,0.80f));
 
-        float x = 355.0f;
         m_tx[0].setPosition(sf::Vector2f(155.0f,115.0f));
 
         m_tx[i].setPosition(sf::Vector2f(155.0f, m_tx[i-1].getPosition().y + 100.0f));
