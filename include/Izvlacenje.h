@@ -8,9 +8,11 @@
 #include<sstream>
 #include<windows.h>
 #include<iostream>
+
+#include<Loptica.h>
 #include<SFML/Graphics.hpp>
 
-class Izvlacenje
+class Izvlacenje : public Loptica
 {
 public:
     Izvlacenje();
@@ -27,7 +29,7 @@ private:
     std::vector<sf::Sprite> m_izvucenBroj;
     std::vector<sf::Sprite> m_velikiBrojevi;
 
-    sf::Texture m_tx[48]; // textures for numbers
+    std::vector<sf::Texture> m_tx; // textures for numbers
 
     //red,green,blue,purple,brown,yellow, orange, gray
 

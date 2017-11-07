@@ -113,6 +113,10 @@ void Loptica::RandomDet(sf::Sprite &d1, sf::Sprite &d2)
 
     }
 }
+/*sf::Vector2f setDetPos(sf::Sprite det)
+{
+    return det.setPosition(sf::Vector2f(det.getPosition().x - 100, det.getPosition().y));
+}*/
 void Loptica::Draw(sf::RenderWindow &m_window)
 {
 

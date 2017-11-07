@@ -2,12 +2,12 @@
 
 Izvlacenje::Izvlacenje()
 {
+    m_tx.resize(49);
     // ucitavanje
-    for(int i = 1; i <= 48; i++)
+    for(unsigned int i = 1; i < m_tx.size(); i++)
     {
         s = to_string(i);
         m_tx[i].loadFromFile("slike/"+ s + ".png");
-        m_tx[i].setSmooth(true);
     }
     // ubacivanje brojeva u vektor
     m_moguciBrojevi.resize(48);
@@ -26,6 +26,9 @@ void Izvlacenje::Animacija(sf::RenderWindow &m_window)
     m_izvucenBroj.resize(35);
     m_velikiBrojevi.resize(35);
 
+    sf::Clock clock;
+    sf::Time elapsed = clock.getElapsedTime();
+
     // loadovanje texture u sprite
     for(unsigned int i = 0; i < m_izvucenBroj.size(); i++)
     {
@@ -37,7 +40,6 @@ void Izvlacenje::Animacija(sf::RenderWindow &m_window)
             m_izvucenBroj[i].setPosition(sf::Vector2f(420.0f,30.0f));
             m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
             m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
-            // wait 3 sec
             break;
         case 1:
             m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);

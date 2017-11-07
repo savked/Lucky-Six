@@ -13,7 +13,6 @@ class Loptica
 public:
     Loptica();
     void Draw(sf::RenderWindow &m_window);
-
     void RandomDet(sf::Sprite &d1, sf::Sprite &d2);
 
 private:
