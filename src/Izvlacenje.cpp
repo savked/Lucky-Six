@@ -7,6 +7,7 @@ Izvlacenje::Izvlacenje()
     {
         s = to_string(i);
         m_tx[i].loadFromFile("slike/"+ s + ".png");
+        m_tx[i].setSmooth(true);
     }
     // ubacivanje brojeva u vektor
     m_moguciBrojevi.resize(48);
@@ -23,62 +24,265 @@ Izvlacenje::Izvlacenje()
 void Izvlacenje::Animacija(sf::RenderWindow &m_window)
 {
     m_izvucenBroj.resize(35);
+    m_velikiBrojevi.resize(35);
+
     // loadovanje texture u sprite
     for(unsigned int i = 0; i < m_izvucenBroj.size(); i++)
     {
-        m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
-        m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
-
-        if(i == 0)
+        switch(i)
+        {
+        case 0:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
             m_izvucenBroj[i].setPosition(sf::Vector2f(420.0f,30.0f));
-        else if(i > 0 && i <= 4)
-            m_izvucenBroj[i].setPosition(sf::Vector2f(m_izvucenBroj[i-1].getPosition().x + 100.0f,m_izvucenBroj[i-1].getPosition().y));
-        /////
-        else if(i == 5)
-        {
-            m_izvucenBroj[i].setPosition(sf::Vector2f(80.0f, 100.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            // wait 3 sec
+            break;
+        case 1:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(520.0f,30.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 2:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(620.0f,30.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 3:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(720.0f,30.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 4:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(820.0f,30.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 5:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(80.0f,100.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 6:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(80.0f,200.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 7:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(80.0f,300.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 8:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(80.0f,400.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 9:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(80.0f,500.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 10:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(80.0f,600.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 11:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(80.0f,700.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 12:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(80.0f,800.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 13:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(80.0f,900.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 14:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(300.0f,700.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 15:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(300.0f,800.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 16:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(300.0f,900.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 17:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(520.0f,700.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 18:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(520.0f,800.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 19:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(520.0f,900.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 20:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(740.0f,700.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 21:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(740.0f,800.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 22:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(740.0f,900.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 23:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(960.0f,700.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 24:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(960.0f,800.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 25:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(960.0f,900.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 26:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(1150.0f,100.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 27:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(1150.0f,200.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 28:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(1150.0f,300.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 29:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(1150.0f,400.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 30:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(1150.0f,500.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 31:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(1150.0f,600.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 32:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(1150.0f,700.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 33:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(1150.0f,800.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
+        case 34:
+            m_velikiBrojevi[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_velikiBrojevi[i].setPosition(sf::Vector2f(430.0f, 130.0f));
+            m_izvucenBroj[i].setPosition(sf::Vector2f(1150.0f,900.0f));
+            m_izvucenBroj[i].setTexture(m_tx[m_moguciBrojevi[i]]);
+            m_izvucenBroj[i].setScale(sf::Vector2f(0.120f, 0.120f));
+            break;
         }
-        else if(i > 5 && i <= 13)
-        {
-            m_izvucenBroj[i].setPosition(sf::Vector2f(m_izvucenBroj[i-1].getPosition().x,m_izvucenBroj[i-1].getPosition().y + 100.0f));
-        }
-        else if(i > 13 && i <= 25)
-        {
-            if(i == 14 || i == 17 || i == 20 || i == 23)
-                m_izvucenBroj[i].setPosition(sf::Vector2f(m_izvucenBroj[i-1].getPosition().x + 220.0f, 700.0f));
-            else
-                m_izvucenBroj[i].setPosition(sf::Vector2f(m_izvucenBroj[i-1].getPosition().x, m_izvucenBroj[i-1].getPosition().y + 100.0f));
-        }
-        else if(i > 25 && i <= 35)
-        {
-            if(i == 26)
-                m_izvucenBroj[i].setPosition(sf::Vector2f(1150.0f,100.0f));
-            else
-                m_izvucenBroj[i].setPosition(sf::Vector2f(m_izvucenBroj[i-1].getPosition().x, m_izvucenBroj[i-1].getPosition().y + 100.0f));
-        }
+
         m_window.draw(m_izvucenBroj[i]);
+        m_window.draw(m_velikiBrojevi[i]);
     }
 }
-/*void Izvlacenje::Timer()
-{
-    // timer
-    int minuti = 05, sekunde = 00;
-
-    while(minuti != 00 && sekunde != 00)
-    {
-        sekunde--;
-
-        Sleep(1000);
-
-        if(sekunde <= 00)
-        {
-            minuti--;
-            sekunde = 59;
-        }
-    }
-    if(minuti == 00 && sekunde == 0)
-        m_counterDone = true;
-}*/
 std::string Izvlacenje::to_string(int i)
 {
     std::stringstream ss;

@@ -6,6 +6,7 @@
 #include<stack>
 #include<algorithm>
 #include<sstream>
+#include<windows.h>
 #include<iostream>
 #include<SFML/Graphics.hpp>
 
@@ -15,7 +16,6 @@ public:
     Izvlacenje();
 
     void Animacija(sf::RenderWindow &m_window);
-    //void Timer();
 
 
     std::string to_string(int i);
@@ -24,8 +24,10 @@ private:
     std::string s;
     std::vector<int> m_moguciBrojevi;
 
-    sf::Texture m_tx[48]; // vece teksture
     std::vector<sf::Sprite> m_izvucenBroj;
+    std::vector<sf::Sprite> m_velikiBrojevi;
+
+    sf::Texture m_tx[48]; // textures for numbers
 
     //red,green,blue,purple,brown,yellow, orange, gray
 

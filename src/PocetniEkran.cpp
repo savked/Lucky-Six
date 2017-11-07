@@ -19,7 +19,7 @@ PocetniEkran::PocetniEkran()
     m_cs.setPosition(sf::Vector2f(500.0f, 500.0f));
     m_cs.setFillColor(sf::Color::Cyan);
 }
-/*int PocetniEkran::gameAccess(sf::Event &event, int tokIgre)
+int PocetniEkran::gameAccess(sf::Event &event, int tokIgre)
 {
     m_enteredText.setFont(m_ft);
     m_enteredText.setPosition(460.0f, 405.0f);
@@ -59,7 +59,7 @@ PocetniEkran::PocetniEkran()
                     return tokIgre = 0;
                 }
     }
-}*/
+}
 void PocetniEkran::Draw(sf::RenderWindow &m_window)
 {
     if(m_flag == 1)
