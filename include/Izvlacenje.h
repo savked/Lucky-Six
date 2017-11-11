@@ -4,6 +4,7 @@
 #include<string>
 #include<cstdlib>
 #include<stack>
+#include<ctime>
 #include<algorithm>
 #include<sstream>
 #include<windows.h>

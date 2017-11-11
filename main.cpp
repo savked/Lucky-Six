@@ -34,7 +34,6 @@ int main()
 
         window.clear();
         window.draw(bg);
-
         l.Draw(window);
         iz.Animacija(window);
 
