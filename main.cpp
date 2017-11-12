@@ -9,7 +9,6 @@ int main()
     settings.antialiasingLevel = 8;
 
     sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Lucky Six!", sf::Style::Fullscreen, settings);
-    window.setFramerateLimit(60);
 
     sf::Texture tx;
     sf::Sprite bg;
@@ -21,6 +20,8 @@ int main()
     Izvlacenje iz;
     PocetniEkran pe;
 
+    int tokIgre = 0;
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -29,15 +30,19 @@ int main()
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                 window.close();
 
-            //pe.gameAccess(event);
+            pe.gameAccess(event, tokIgre);
         }
 
         window.clear();
         window.draw(bg);
-        l.Draw(window);
-        iz.Animacija(window);
 
-        //pe.Draw(window);
+        if(tokIgre == 1)
+        {
+            l.Draw(window);
+            iz.Animacija(window);
+        }
+        else
+            pe.Draw(window);
 
         window.display();
     }

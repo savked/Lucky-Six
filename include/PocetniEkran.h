@@ -9,7 +9,7 @@ class PocetniEkran
 public:
     PocetniEkran();
     void Draw(sf::RenderWindow &m_window);
-    int gameAccess(sf::Event &event, int tokIgre);
+    int gameAccess(sf::Event &event, int &tokIgre);
 
 private:
     sf::Event event;
