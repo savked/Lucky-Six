@@ -26,10 +26,34 @@ int PocetniEkran::gameAccess(sf::Event &event, int &tokIgre)
 
     if (event.type == sf::Event::TextEntered)
     {
+        /*if(str.size() > 0)
+            str.at(str.size() - 1) = '\u00B7';*/
+
         if (event.text.unicode == '\b')
         {
             str.erase(str.size() - 1, 1);
             m_enteredText.setString(str);
+        }
+        else if(event.text.unicode == 13)
+        {
+            if(str == "123") // sifra // password
+            {
+                m_flag = 0;
+
+                m_pwText.setString("Loading ...");
+                m_pwText.setColor(sf::Color::Green);
+                m_pwText.setPosition(sf::Vector2f(550.0f, 450.0f));
+
+                return tokIgre = 1;
+            }
+            else
+            {
+                m_pwText.setString("Pogresan password, probaj ponovo");
+                m_pwText.setPosition(sf::Vector2f(390.0f, 340.0f));
+                m_pwText.setColor(sf::Color::Red);
+
+                return tokIgre = 0;
+            }
         }
         else if (event.text.unicode < 128)
         {
