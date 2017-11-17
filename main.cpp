@@ -9,6 +9,7 @@ int main()
     settings.antialiasingLevel = 8;
 
     sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Lucky Six!", sf::Style::Fullscreen, settings);
+    window.setFramerateLimit(60);
 
     sf::Texture tx;
     sf::Sprite bg;
@@ -17,10 +18,14 @@ int main()
     bg.setTexture(tx);
 
     Loptica l;
-    Izvlacenje iz;
     PocetniEkran pe;
 
+    sf::Clock clock;
+    float elapsed = clock.getElapsedTime().asSeconds();
+
     int tokIgre = 0;
+
+    int i = 0;
 
     while (window.isOpen())
     {
@@ -39,7 +44,11 @@ int main()
         if(tokIgre == 1)
         {
             l.Draw(window);
-            iz.Animacija(window);
+
+            Izvlacenje iz(i, window);
+            iz.Draw(i, window);
+
+            ++i;
         }
         else
             pe.Draw(window);
