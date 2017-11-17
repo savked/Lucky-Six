@@ -13,11 +13,6 @@ PocetniEkran::PocetniEkran()
 
     m_box.setPosition(sf::Vector2f(450.0f, 400.0f));
     m_box.setColor(sf::Color::White);
-
-    // circle shape (button for logging in)
-    m_cs.setRadius(40.0f);
-    m_cs.setPosition(sf::Vector2f(500.0f, 500.0f));
-    m_cs.setFillColor(sf::Color::Cyan);
 }
 int PocetniEkran::gameAccess(sf::Event &event, int &tokIgre)
 {
@@ -26,6 +21,7 @@ int PocetniEkran::gameAccess(sf::Event &event, int &tokIgre)
 
     if (event.type == sf::Event::TextEntered)
     {
+        // CHANGING LAST TYPED CHARACTER TO DOT
         /*if(str.size() > 0)
             str.at(str.size() - 1) = '\u00B7';*/
 
@@ -61,29 +57,6 @@ int PocetniEkran::gameAccess(sf::Event &event, int &tokIgre)
             m_enteredText.setString(str);
         }
     }
-    if(event.type == sf::Event::MouseButtonPressed)
-    {
-        if(event.mouseButton.button == sf::Mouse::Left)
-            if(m_cs.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
-                if(str == "123") // sifra // password
-                {
-                    m_flag = 0;
-
-                    m_pwText.setString("Loading ...");
-                    m_pwText.setColor(sf::Color::Green);
-                    m_pwText.setPosition(sf::Vector2f(550.0f, 450.0f));
-
-                    return tokIgre = 1;
-                }
-                else
-                {
-                    m_pwText.setString("Pogresan password, probaj ponovo");
-                    m_pwText.setPosition(sf::Vector2f(390.0f, 340.0f));
-                    m_pwText.setColor(sf::Color::Red);
-
-                    return tokIgre = 0;
-                }
-    }
 }
 void PocetniEkran::Draw(sf::RenderWindow &m_window)
 {
@@ -92,11 +65,9 @@ void PocetniEkran::Draw(sf::RenderWindow &m_window)
         m_window.draw(m_enteredText);
         m_window.draw(m_box);
         m_window.draw(m_pwText);
-        m_window.draw(m_cs);
     }
     else
     {
         m_window.draw(m_pwText);
     }
-
 }

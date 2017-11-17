@@ -417,7 +417,7 @@
 1510522916 source:c:\users\savke\documents\sfml projects\lucky six\src\texts.cpp
 	"Texts.h"
 
-1510522916 c:\users\savke\documents\sfml projects\lucky six\include\izvlacenje.h
+1510762664 c:\users\savke\documents\sfml projects\lucky six\include\izvlacenje.h
 	<string>
 	<cstdlib>
 	<stack>
@@ -432,10 +432,10 @@
 1510522916 source:c:\users\savke\documents\sfml projects\lucky six\src\izvlacenje.cpp
 	"Izvlacenje.h"
 
-1510522916 source:c:\users\savke\documents\sfml projects\lucky six\src\pocetniekran.cpp
+1510778644 source:c:\users\savke\documents\sfml projects\lucky six\src\pocetniekran.cpp
 	"PocetniEkran.h"
 
-1510522916 c:\users\savke\documents\sfml projects\lucky six\include\pocetniekran.h
+1510762462 c:\users\savke\documents\sfml projects\lucky six\include\pocetniekran.h
 	<SFML/Graphics.hpp>
 	<iostream>
 

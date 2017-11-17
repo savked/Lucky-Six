@@ -24,8 +24,6 @@ private:
 
     sf::Font m_ft;
     sf::Sprite m_box;
-
-    sf::CircleShape m_cs;
 };
 
 #endif // POCETNIEKRAN_H

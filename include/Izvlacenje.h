@@ -17,10 +17,7 @@ class Izvlacenje : public Loptica
 {
 public:
     Izvlacenje();
-
     void Animacija(sf::RenderWindow &m_window);
-
-
     std::string to_string(int i);
 
 private:
