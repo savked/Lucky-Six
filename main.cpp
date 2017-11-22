@@ -46,9 +46,10 @@ int main()
             l.Draw(window);
 
             Izvlacenje iz(i, window);
+
             iz.Draw(i, window);
 
-            ++i;
+            i++;
         }
         else
             pe.Draw(window);

@@ -16,7 +16,7 @@
 1509053418 c:\users\savke\documents\sfml projects\lucky six\include\random.h
 	<random>
 
-1510960475 source:c:\users\savke\documents\sfml projects\lucky six\main.cpp
+1511013148 source:c:\users\savke\documents\sfml projects\lucky six\main.cpp
 	<SFML/Graphics.hpp>
 	<Loptica.h>
 	<Izvlacenje.h>
@@ -417,7 +417,7 @@
 1510953484 source:c:\users\savke\documents\sfml projects\lucky six\src\texts.cpp
 	"Texts.h"
 
-1510959475 c:\users\savke\documents\sfml projects\lucky six\include\izvlacenje.h
+1511012754 c:\users\savke\documents\sfml projects\lucky six\include\izvlacenje.h
 	<string>
 	<cstdlib>
 	<stack>
@@ -429,7 +429,7 @@
 	<Loptica.h>
 	<SFML/Graphics.hpp>
 
-1510960510 source:c:\users\savke\documents\sfml projects\lucky six\src\izvlacenje.cpp
+1511012960 source:c:\users\savke\documents\sfml projects\lucky six\src\izvlacenje.cpp
 	"Izvlacenje.h"
 
 1510953484 source:c:\users\savke\documents\sfml projects\lucky six\src\pocetniekran.cpp
