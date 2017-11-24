@@ -1,5 +1,4 @@
-#ifndef TEXTS_H
-#define TEXTS_H
+#pragma once
 
 #include<SFML/Graphics.hpp>
 #include<iostream>
@@ -14,5 +13,3 @@ private:
     sf::Text m_tx[35];
     sf::Font m_arial;
 };
-
-#endif // TEXTS_H

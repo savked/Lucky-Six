@@ -1,5 +1,4 @@
-#ifndef POCETNIEKRAN_H
-#define POCETNIEKRAN_H
+#pragma once
 
 #include<SFML/Graphics.hpp>
 #include<iostream>
@@ -25,5 +24,3 @@ private:
     sf::Font m_ft;
     sf::Sprite m_box;
 };
-
-#endif // POCETNIEKRAN_H

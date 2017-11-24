@@ -1,5 +1,4 @@
-#ifndef LOPTICA_H
-#define LOPTICA_H
+#pragma once
 
 #include<iostream>
 #include<cstdlib>
@@ -23,5 +22,3 @@ private:
     sf::Sprite m_detelina1;
     sf::Sprite m_detelina2;
 };
-
-#endif // LOPTICA_H

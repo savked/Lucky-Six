@@ -19,6 +19,7 @@ int main()
 
     Loptica l;
     PocetniEkran pe;
+    Izvlacenje iz;
 
     sf::Clock clock;
     float elapsed = clock.getElapsedTime().asSeconds();
@@ -44,8 +45,6 @@ int main()
         if(tokIgre == 1)
         {
             l.Draw(window);
-
-            Izvlacenje iz(i, window);
 
             iz.Draw(i, window);
 

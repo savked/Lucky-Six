@@ -1,5 +1,4 @@
-#ifndef IZVLACENJE_H
-#define IZVLACENJE_H
+#pragma once
 
 #include<string>
 #include<cstdlib>
@@ -16,8 +15,8 @@
 class Izvlacenje : public Loptica
 {
 public:
-    Izvlacenje(int i, sf::RenderWindow &m_window);
-    void Draw(int i, sf::RenderWindow &m_window2);
+    Izvlacenje();
+    void Draw(int i, sf::RenderWindow &m_window);
     std::string to_string(int i);
 
 private:
@@ -38,5 +37,3 @@ private:
     //sf::Text m_counterMin, m_counterSec;
 
 };
-
-#endif // IZVLACENJE_H
