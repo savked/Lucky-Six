@@ -48,6 +48,9 @@ int main()
 
             iz.Draw(i, window);
 
+            for(int j = 0; j < i; j++)
+                iz.Draw(j, window);
+
             i++;
         }
         else
