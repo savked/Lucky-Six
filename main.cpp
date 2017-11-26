@@ -21,8 +21,15 @@ int main()
     PocetniEkran pe;
     Izvlacenje iz;
 
-    sf::Clock clock;
-    float elapsed = clock.getElapsedTime().asSeconds();
+    sf::Sprite exit;
+    sf::Texture txExit;
+
+    txExit.loadFromFile("slike/exit.png");
+    exit.setTexture(txExit);
+    exit.setPosition(1250.0f, -3.0f);
+    exit.setScale(0.07f, 0.07f);
+
+    auto mousePos = sf::Mouse::getPosition();
 
     int tokIgre = 0;
 
@@ -33,20 +40,28 @@ int main()
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                 window.close();
+
+            if(event.type == sf::Event::MouseButtonPressed)
+                if(event.mouseButton.button == sf::Mouse::Left)
+                    if(exit.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
+                        window.close();
 
             pe.gameAccess(event, tokIgre);
         }
 
         window.clear();
         window.draw(bg);
+        window.draw(exit);
 
         if(tokIgre == 1)
         {
             l.Draw(window);
 
-            Sleep(2000);
+            if(i > 0)
+                Sleep(3000);
+
             iz.Draw(i, window);
             iz.DrawVeliki(i, window);
 

@@ -52,71 +52,81 @@ void Loptica::RandomDet(sf::Sprite &d1, sf::Sprite &d2)
 {
     srand(time(NULL));
 
-    int rd1X; //= rand() % 12 + 0; // promeniti na 30 kad se unesu sve moguce pozicije
-    int rd1Y; //= rand() % 8 + 0; // ----------------------||------------------------
+    int rd1 = rand() % 30;
+    int rd2 = rand() % 30;
 
-    int rd2X; //= rand() % 12 + 0;
-    int rd2Y; //= rand() % 8 + 0;
+    sf::Vector2f pozicije[30];
 
-    float xPozicija1 = 84.0f;
-    float yPozicije1[9] = {103.0f, 204.0f, 304.0f, 404.0f, 504.0f, 604.0f, 704.0f, 804.0f, 904.0f};
+    sf::Vector2f pos1(85.0f, 102.0f);
+    sf::Vector2f pos2(85.0f, 202.0f);
+    sf::Vector2f pos3(85.0f, 302.0f);
+    sf::Vector2f pos4(85.0f, 402.0f);
+    sf::Vector2f pos5(85.0f, 502.0f);
+    sf::Vector2f pos6(85.0f, 602.0f);
+    sf::Vector2f pos7(85.0f, 702.0f);
+    sf::Vector2f pos8(85.0f, 802.0f);
+    sf::Vector2f pos9(85.0f, 902.0f);
 
-    float xPozicije2[4] = {304.0f, 524.0f, 744.0f, 964.0f};
-    float yPozicije2[3] = {704.0f, 804.0f, 904.0f};
+    sf::Vector2f pos10(305.0f, 702.0f);
+    sf::Vector2f pos11(305.0f, 802.0f);
+    sf::Vector2f pos12(305.0f, 902.0f);
 
-    float xPozicija3 = 1154.0f;
+    sf::Vector2f pos13(525.0f, 702.0f);
+    sf::Vector2f pos14(525.0f, 802.0f);
+    sf::Vector2f pos15(525.0f, 902.0f);
 
-    int choice = rand() % 3 + 1;
+    sf::Vector2f pos16(745.0f, 702.0f);
+    sf::Vector2f pos17(745.0f, 802.0f);
+    sf::Vector2f pos18(745.0f, 902.0f);
 
-    switch(choice)
-    {
-    case 1:
-        while(rd1X != rd2X && rd1Y != rd2Y)
-        {
-            rd1X = xPozicija1;
-            rd1Y = rand() % 9;
+    sf::Vector2f pos19(85.0f, 702.0f);
+    sf::Vector2f pos20(85.0f, 802.0f);
+    sf::Vector2f pos21(85.0f, 902.0f);
 
-            rd2X = xPozicija1;
-            rd2Y = rand() % 9;
-        }
+    sf::Vector2f pos22(1155.0f, 102.0f);
+    sf::Vector2f pos23(1155.0f, 202.0f);
+    sf::Vector2f pos24(1155.0f, 302.0f);
+    sf::Vector2f pos25(1155.0f, 402.0f);
+    sf::Vector2f pos26(1155.0f, 502.0f);
+    sf::Vector2f pos27(1155.0f, 602.0f);
+    sf::Vector2f pos28(1155.0f, 702.0f);
+    sf::Vector2f pos29(1155.0f, 802.0f);
+    sf::Vector2f pos30(1155.0f, 902.0f);
 
-        d1.setPosition(sf::Vector2f(rd1X, yPozicije1[rd1Y]));
-        d2.setPosition(sf::Vector2f(rd2X, yPozicije1[rd2Y]));
-        break;
+    pozicije[0] = pos1;
+    pozicije[1] = pos2;
+    pozicije[2] = pos3;
+    pozicije[3] = pos4;
+    pozicije[4] = pos5;
+    pozicije[5] = pos6;
+    pozicije[6] = pos7;
+    pozicije[7] = pos8;
+    pozicije[8] = pos9;
+    pozicije[9] = pos10;
+    pozicije[10] = pos11;
+    pozicije[11] = pos12;
+    pozicije[12] = pos13;
+    pozicije[13] = pos14;
+    pozicije[14] = pos15;
+    pozicije[15] = pos16;
+    pozicije[16] = pos17;
+    pozicije[17] = pos18;
+    pozicije[18] = pos19;
+    pozicije[19] = pos20;
+    pozicije[20] = pos21;
+    pozicije[21] = pos22;
+    pozicije[22] = pos23;
+    pozicije[23] = pos24;
+    pozicije[24] = pos25;
+    pozicije[25] = pos26;
+    pozicije[26] = pos27;
+    pozicije[27] = pos28;
+    pozicije[28] = pos29;
+    pozicije[29] = pos30;
 
-    case 2:
-        while(rd1X != rd2X && rd1Y != rd2Y)
-        {
-            rd1X = rand() % 4;
-            rd1Y = rand() % 3;
-
-            rd2X = rand() % 4;
-            rd2Y = rand() % 3;
-        }
-
-        d1.setPosition(sf::Vector2f(xPozicije2[rd1X], yPozicije2[rd1Y]));
-        d2.setPosition(sf::Vector2f(xPozicije2[rd2X], yPozicije2[rd2Y]));
-
-        break;
-    case 3:
-        while(rd1X != rd2X && rd1Y != rd2Y)
-        {
-            rd1X = xPozicija3;
-            rd1Y = rand() % 9;
-
-            rd2X = xPozicija3;
-            rd2Y = rand() % 9;
-        }
-
-        d1.setPosition(sf::Vector2f(rd1X, yPozicije1[rd1Y]));
-        d2.setPosition(sf::Vector2f(rd2X, yPozicije1[rd2Y]));
-
-    }
+    d1.setPosition(pozicije[rd1]);
+    d2.setPosition(pozicije[rd2]);
 }
-/*sf::Vector2f setDetPos(sf::Sprite det)
-{
-    return det.setPosition(sf::Vector2f(det.getPosition().x - 100, det.getPosition().y));
-}*/
 void Loptica::Draw(sf::RenderWindow &m_window)
 {
 
