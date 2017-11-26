@@ -240,10 +240,11 @@ void Izvlacenje::Draw(int i, sf::RenderWindow &m_window)
     }
 
     m_velikiBrojevi[i].setPosition(sf::Vector2f(400.0f, 130.0f));
-    m_window.draw(m_velikiBrojevi[i]);
-
     m_window.draw(m_izvucenBroj[i]);
-
+}
+void Izvlacenje::DrawVeliki(int i, sf::RenderWindow &window2)
+{
+    window2.draw(m_velikiBrojevi[i]);
 }
 std::string Izvlacenje::to_string(int i)
 {

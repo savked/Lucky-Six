@@ -46,10 +46,15 @@ int main()
         {
             l.Draw(window);
 
+            Sleep(2000);
             iz.Draw(i, window);
+            iz.DrawVeliki(i, window);
 
             for(int j = 0; j < i; j++)
+            {
                 iz.Draw(j, window);
+                iz.DrawVeliki(i, window);
+            }
 
             i++;
         }

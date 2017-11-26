@@ -17,6 +17,7 @@ class Izvlacenje : public Loptica
 public:
     Izvlacenje();
     void Draw(int i, sf::RenderWindow &m_window);
+    void DrawVeliki(int i, sf::RenderWindow &window2);
     std::string to_string(int i);
 
 private:
