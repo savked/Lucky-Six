@@ -1,28 +1,18 @@
 #pragma once
 #include<SFML/Graphics.hpp>
 #include<iostream>
-#include<sstream>
-#include<windows.h>
 
 class Tiketi
 {
 public:
     Tiketi();
-    void povecaj();
-    void timerDone(int &flag);
-    std::string to_string(int i);
     void Draw(sf::RenderWindow &m_window);
 
 private:
-    sf::Font m_font;
-    sf::Text m_timerText;
-
-    sf::Sprite m_noviTiket;
     sf::Texture m_txBox;
+    sf::Sprite m_imenaBox;
 
-    char nula = '0';
-    int m_minuti = 5;
-    int m_sekunde = 59;
+    std::vector<std::string> imena;
+    std::vector<std::vector<int>> brojevi;
 
-    sf::Text m_timerTxt;
 };

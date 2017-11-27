@@ -1,7 +1,7 @@
 #include<SFML/Graphics.hpp>
 #include<Loptica.h>
 #include<Izvlacenje.h>
-#include<Tiketi.h>
+#include<Timer.h>
 
 int main()
 {
@@ -19,7 +19,8 @@ int main()
 
     Loptica l;
     Izvlacenje iz;
-    Tiketi t;
+    Timer t;
+    Tiketi ti;
 
     sf::Sprite exit;
     sf::Texture txExit;
@@ -45,6 +46,8 @@ int main()
                 if(event.mouseButton.button == sf::Mouse::Left)
                     if(exit.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
                         window.close();
+
+            t.clickedOnTicket(event, startFlag);
         }
 
         window.clear();
@@ -70,6 +73,10 @@ int main()
             }
 
             i++;
+        }
+        else if(startFlag == 2)
+        {
+            ti.Draw(window);
         }
         else
             t.Draw(window);
