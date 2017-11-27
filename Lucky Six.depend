@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1511736127 source:c:\users\savke\documents\sfml projects\lucky six\src\loptica.cpp
+1511793755 source:c:\users\savke\documents\sfml projects\lucky six\src\loptica.cpp
 	"Loptica.h"
 
 1511735368 c:\users\savke\documents\sfml projects\lucky six\include\loptica.h
@@ -17,11 +17,12 @@
 1509053418 c:\users\savke\documents\sfml projects\lucky six\include\random.h
 	<random>
 
-1511737214 source:c:\users\savke\documents\sfml projects\lucky six\main.cpp
+1511795362 source:c:\users\savke\documents\sfml projects\lucky six\main.cpp
 	<SFML/Graphics.hpp>
 	<Loptica.h>
 	<Izvlacenje.h>
 	<PocetniEkran.h>
+	<Tiketi.h>
 
 1486736397 c:\program files (x86)\sfml-2.4.2\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -439,4 +440,13 @@
 1511555191 c:\users\savke\documents\sfml projects\lucky six\include\pocetniekran.h
 	<SFML/Graphics.hpp>
 	<iostream>
+
+1511795835 c:\users\savke\documents\sfml projects\lucky six\include\tiketi.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<sstream>
+	<windows.h>
+
+1511795333 source:c:\users\savke\documents\sfml projects\lucky six\src\tiketi.cpp
+	"Tiketi.h"
 

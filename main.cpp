@@ -2,6 +2,7 @@
 #include<Loptica.h>
 #include<Izvlacenje.h>
 #include<PocetniEkran.h>
+#include<Tiketi.h>
 
 int main()
 {
@@ -20,6 +21,7 @@ int main()
     Loptica l;
     PocetniEkran pe;
     Izvlacenje iz;
+    Tiketi t;
 
     sf::Sprite exit;
     sf::Texture txExit;
@@ -28,8 +30,6 @@ int main()
     exit.setTexture(txExit);
     exit.setPosition(1250.0f, -3.0f);
     exit.setScale(0.07f, 0.07f);
-
-    auto mousePos = sf::Mouse::getPosition();
 
     int tokIgre = 0;
 
@@ -60,7 +60,7 @@ int main()
             l.Draw(window);
 
             if(i > 0)
-                Sleep(3000);
+                Sleep(4000);
 
             iz.Draw(i, window);
             iz.DrawVeliki(i, window);
@@ -74,7 +74,8 @@ int main()
             i++;
         }
         else
-            pe.Draw(window);
+            t.Draw(window);
+            //pe.Draw(window);
 
         window.display();
     }
