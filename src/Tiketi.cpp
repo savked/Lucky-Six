@@ -4,10 +4,21 @@ Tiketi::Tiketi()
 {
     m_font.loadFromFile("fonts/arial.ttf");
 
+    m_timerTxt.setFont(m_font);
+    m_timerTxt.setPosition(sf::Vector2f(470.0f, 350.0f));
+    m_timerTxt.setFillColor(sf::Color::Green);
+    m_timerTxt.setString("Do pocetka sledeceg kola");
+
     m_timerText.setFont(m_font);
-    m_timerText.setScale(sf::Vector2f(1.5f, 1.5f));
-    m_timerText.setPosition(sf::Vector2f(sf::VideoMode::getDesktopMode().width / 2, sf::VideoMode::getDesktopMode().height / 2));
+    m_timerText.setPosition(sf::Vector2f(600.0f, 400.0f));
     m_timerText.setFillColor(sf::Color::White);
+
+    m_txBox.loadFromFile("slike/box2.png");
+    m_noviTiket.setTexture(m_txBox);
+
+    m_noviTiket.setPosition(sf::Vector2f(470.0f, 500.0f));
+
+
 }
 void Tiketi::povecaj()
 {
@@ -43,5 +54,7 @@ std::string Tiketi::to_string(int i)
 void Tiketi::Draw(sf::RenderWindow &m_window)
 {
     povecaj();
+    m_window.draw(m_noviTiket);
+    m_window.draw(m_timerTxt);
     m_window.draw(m_timerText);
 }
