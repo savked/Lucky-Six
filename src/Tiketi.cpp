@@ -28,7 +28,7 @@ void Tiketi::povecaj()
     }
     else
     {
-        Sleep(1000);
+        //Sleep(1000);
         m_sekunde--;
     }
 
@@ -57,4 +57,11 @@ void Tiketi::Draw(sf::RenderWindow &m_window)
     m_window.draw(m_noviTiket);
     m_window.draw(m_timerTxt);
     m_window.draw(m_timerText);
+}
+void Tiketi::timerDone(int &flag)
+{
+    if(m_minuti == 0 && m_sekunde == 0)
+    {
+        flag = 1;
+    }
 }

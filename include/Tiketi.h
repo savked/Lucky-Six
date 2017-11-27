@@ -9,6 +9,7 @@ class Tiketi
 public:
     Tiketi();
     void povecaj();
+    void timerDone(int &flag);
     std::string to_string(int i);
     void Draw(sf::RenderWindow &m_window);
 

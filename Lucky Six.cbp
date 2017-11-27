@@ -55,6 +55,7 @@
 		<Unit filename="include/Loptica.h" />
 		<Unit filename="include/PocetniEkran.h" />
 		<Unit filename="include/Texts.h" />
+		<Unit filename="include/Tiketi.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="sfml-audio-2.dll" />
 		<Unit filename="sfml-audio-d-2.dll" />
@@ -70,6 +71,7 @@
 		<Unit filename="src/Loptica.cpp" />
 		<Unit filename="src/PocetniEkran.cpp" />
 		<Unit filename="src/Texts.cpp" />
+		<Unit filename="src/Tiketi.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -1,7 +1,6 @@
 #include<SFML/Graphics.hpp>
 #include<Loptica.h>
 #include<Izvlacenje.h>
-#include<PocetniEkran.h>
 #include<Tiketi.h>
 
 int main()
@@ -19,7 +18,6 @@ int main()
     bg.setTexture(tx);
 
     Loptica l;
-    PocetniEkran pe;
     Izvlacenje iz;
     Tiketi t;
 
@@ -31,7 +29,7 @@ int main()
     exit.setPosition(1250.0f, -3.0f);
     exit.setScale(0.07f, 0.07f);
 
-    int tokIgre = 0;
+    int startFlag = 0;
 
     int i = 0;
 
@@ -47,15 +45,15 @@ int main()
                 if(event.mouseButton.button == sf::Mouse::Left)
                     if(exit.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
                         window.close();
-
-            pe.gameAccess(event, tokIgre);
         }
 
         window.clear();
         window.draw(bg);
         window.draw(exit);
 
-        if(tokIgre == 1)
+        t.timerDone(startFlag);
+
+        if(startFlag == 1)
         {
             l.Draw(window);
 
@@ -75,7 +73,6 @@ int main()
         }
         else
             t.Draw(window);
-            //pe.Draw(window);
 
         window.display();
     }

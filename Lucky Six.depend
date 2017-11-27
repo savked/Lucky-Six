@@ -441,12 +441,12 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1511796812 c:\users\savke\documents\sfml projects\lucky six\include\tiketi.h
+1511800493 c:\users\savke\documents\sfml projects\lucky six\include\tiketi.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<sstream>
 	<windows.h>
 
-1511795333 source:c:\users\savke\documents\sfml projects\lucky six\src\tiketi.cpp
+1511800491 source:c:\users\savke\documents\sfml projects\lucky six\src\tiketi.cpp
 	"Tiketi.h"
 
