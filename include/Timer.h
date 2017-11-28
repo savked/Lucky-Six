@@ -13,7 +13,7 @@ public:
     void timerDone(int &flag);
     std::string to_string(int i);
     void Draw(sf::RenderWindow &m_window);
-    void clickedOnTicket(sf::Event &m_event, int &flag);
+    void clickedOn(sf::Event &m_event, int &flag);
 
 private:
     sf::Font m_font;

@@ -11,6 +11,7 @@ public:
 private:
     sf::Texture m_txBox;
     sf::Sprite m_imenaBox;
+    sf::Sprite m_brojeviBox;
 
     std::vector<std::string> imena;
     std::vector<std::vector<int>> brojevi;

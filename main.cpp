@@ -47,7 +47,7 @@ int main()
                     if(exit.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
                         window.close();
 
-            t.clickedOnTicket(event, startFlag);
+            t.clickedOn(event, startFlag);
         }
 
         window.clear();

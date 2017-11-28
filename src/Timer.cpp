@@ -57,10 +57,12 @@ void Timer::timerDone(int &flag)
     if(m_minuti == 0 && m_sekunde == 0)
         flag = 1;
 }
-void Timer::clickedOnTicket(sf::Event &m_event, int &flag)
+void Timer::clickedOn(sf::Event &m_event, int &flag)
 {
     if(m_event.type == sf::Event::MouseButtonPressed)
         if(m_event.mouseButton.button == sf::Mouse::Left)
             if(m_noviTiket.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
-                flag = 2;// pozvati klasu Tiketi
+                flag = 2;
+
+    // if clicked on back icon set flag = 3, goes back to timer
 }

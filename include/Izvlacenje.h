@@ -28,6 +28,7 @@ private:
     std::vector<sf::Sprite> m_velikiBrojevi;
 
     std::vector<sf::Texture> m_tx; // textures for numbers
+    std::vector<sf::Texture> m_tx_manji;
 
     //red,green,blue,purple,brown,yellow, orange, gray
 
