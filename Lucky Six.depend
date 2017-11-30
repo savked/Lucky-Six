@@ -17,7 +17,7 @@
 1509053418 c:\users\savke\documents\sfml projects\lucky six\include\random.h
 	<random>
 
-1511970383 source:c:\users\savke\documents\sfml projects\lucky six\main.cpp
+1512055894 source:c:\users\savke\documents\sfml projects\lucky six\main.cpp
 	<SFML/Graphics.hpp>
 	<Loptica.h>
 	<Izvlacenje.h>
@@ -440,12 +440,12 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1511972907 c:\users\savke\documents\sfml projects\lucky six\include\tiketi.h
+1512056170 c:\users\savke\documents\sfml projects\lucky six\include\tiketi.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<Izvlacenje.h>
 
-1511972984 source:c:\users\savke\documents\sfml projects\lucky six\src\tiketi.cpp
+1512056441 source:c:\users\savke\documents\sfml projects\lucky six\src\tiketi.cpp
 	"Tiketi.h"
 
 1511877868 c:\users\savke\documents\sfml projects\lucky six\include\timer.h

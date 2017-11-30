@@ -10,7 +10,6 @@ int main()
 
     sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Lucky Six!", sf::Style::Fullscreen, settings);
     window.setFramerateLimit(60);
-    window.setKeyRepeatEnabled(true);
 
     sf::Texture tx;
     sf::Sprite bg;
@@ -51,8 +50,9 @@ int main()
             t.clickedOn(event, startFlag);
 
             ti.unosImena(event);
-            //ti.unosBrojeva(event);
             ti.unosUloga(event);
+            ti.clickedOnNumber(event);
+            ti.uplatiClicked(event);
         }
 
         window.clear();
