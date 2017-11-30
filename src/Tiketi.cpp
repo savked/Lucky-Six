@@ -94,21 +94,33 @@ void Tiketi::clickedOnNumber(sf::Event &event)
                     {
                     case 0:
                         m_brojeviZaBiranje[i].setPosition(sf::Vector2f(350.0f, 250.0f));
+                        m_brojevi[counterI] = i;
+                        counterI++;
                         break;
                     case 1:
                         m_brojeviZaBiranje[i].setPosition(sf::Vector2f(450.0f, 250.0f));
+                        m_brojevi[counterI] = i;
+                        counterI++;
                         break;
                     case 2:
                         m_brojeviZaBiranje[i].setPosition(sf::Vector2f(550.0f, 250.0f));
+                        m_brojevi[counterI] = i;
+                        counterI++;
                         break;
                     case 3:
                         m_brojeviZaBiranje[i].setPosition(sf::Vector2f(650.0f, 250.0f));
+                        m_brojevi[counterI] = i;
+                        counterI++;
                         break;
                     case 4:
                         m_brojeviZaBiranje[i].setPosition(sf::Vector2f(750.0f, 250.0f));
+                        m_brojevi[counterI] = i;
+                        counterI++;
                         break;
                     case 5:
                         m_brojeviZaBiranje[i].setPosition(sf::Vector2f(850.0f, 250.0f));
+                        m_brojevi[counterI] = i;
+                        counterI++;
                         break;
                     }
                     m_counter++;
@@ -124,19 +136,21 @@ void Tiketi::uplatiClicked(sf::Event &event)
         if(event.mouseButton.button == sf::Mouse::Left)
             if(m_uplatiBox.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
             {
-                m_imena[j] = str1;
-                m_ulog[j] = atoi(str2.c_str());
-                for(int i = 0; i < m_brojevi.size(); i++)
-                    m_brojevi[i] = tempBrojevi[i];
+                m_imena[asd] = str1;
+                m_ulog[asd] = atoi(str2.c_str());
 
-                j++;
+                asd++;
+                Ispis();
             }
-    Ispis();
 }
 void Tiketi::Ispis()
 {
     for(unsigned int i = 0; i < m_brojevi.size(); i++)
-      std::cout << m_brojevi[i] << std::endl;
+    {
+        std::cout << m_imena[i] << std::endl;
+        std::cout << m_ulog[i] << std::endl;
+        std::cout << m_brojevi[i] << std::endl;
+    }
 }
 void Tiketi::unosImena(sf::Event &event)
 {

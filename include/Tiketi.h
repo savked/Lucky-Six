@@ -24,10 +24,10 @@ private:
     std::vector<sf::Sprite> m_brojeviZaBiranje;
     std::vector<sf::CircleShape> m_body;
 
-    int tempBrojevi[6];
-
     int m_counter = 0;
-    int j = 0;
+    int asd = 0;
+
+    int counterI = 0;
 
     sf::Texture m_txBox;
     sf::Texture m_uplatiTx;
