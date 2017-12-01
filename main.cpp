@@ -66,7 +66,7 @@ int main()
             l.Draw(window);
 
             if(i > 0)
-                Sleep(4000);
+                Sleep(2500);
 
             iz.Draw(i, window);
             iz.DrawVeliki(i, window);

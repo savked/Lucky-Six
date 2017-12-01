@@ -124,12 +124,14 @@ void Tiketi::clickedOnNumber(sf::Event &event)
                         break;
                     }
                     m_counter++;
-            }
+                    if(m_counter > 6)
+                        m_counter = 0;
+                }
     }
 }
 void Tiketi::uplatiClicked(sf::Event &event)
 {
-    m_brojevi.resize(6);
+    m_brojevi.resize(50);
     m_imena.resize(50);
     m_ulog.resize(50);
     if(event.type == sf::Event::MouseButtonPressed)
@@ -141,16 +143,26 @@ void Tiketi::uplatiClicked(sf::Event &event)
 
                 asd++;
                 Ispis();
+                // reset everything to default
+                setBrojeve();
+                flag = 0;
+                str1 = "";
+                m_enteredIme.setString("");
+                str2 = "";
+                m_enteredUlog.setString("");
             }
 }
 void Tiketi::Ispis()
 {
-    for(unsigned int i = 0; i < m_brojevi.size(); i++)
+    //ispis imena i uloge
+    for(unsigned int i = 0; i < m_imena.size(); i++)
     {
         std::cout << m_imena[i] << std::endl;
         std::cout << m_ulog[i] << std::endl;
-        std::cout << m_brojevi[i] << std::endl;
     }
+    // ispis brojeva
+    for(unsigned int i = 0; i < m_brojevi.size(); i++)
+        std::cout << m_brojevi[i] << std::endl;
 }
 void Tiketi::unosImena(sf::Event &event)
 {
@@ -174,14 +186,14 @@ void Tiketi::unosImena(sf::Event &event)
             {
                 str1.erase(str1.size() - 1, 1);
                 m_enteredIme.setString(str1);
-                flag = 2;
+                flag = 1;
             }
         }
     }
 }
 void Tiketi::unosUloga(sf::Event &event)
 {
-    if(flag == 2)
+    if(flag == 1)
     {
         m_enteredUlog.setPosition(sf::Vector2f(710.0f, 105.0f));
         if (event.type == sf::Event::TextEntered)
@@ -212,7 +224,6 @@ void Tiketi::Draw(sf::RenderWindow &m_window)
     {
         m_window.draw(m_body[i]);
     }
-
     // draw numbers
     for(unsigned int i = 0; i < m_brojeviZaBiranje.size(); i++)
     {

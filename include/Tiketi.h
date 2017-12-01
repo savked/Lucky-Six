@@ -8,13 +8,14 @@ class Tiketi : public Izvlacenje
 {
 public:
     Tiketi();
+
     void Draw(sf::RenderWindow &m_window);
     void unosImena(sf::Event &event);
     void unosUloga(sf::Event &event);
     void clickedOnNumber(sf::Event &event);
     void uplatiClicked(sf::Event &event);
-    void setBrojeve();
 
+    void setBrojeve();
     void Ispis();
 
 private:
@@ -24,10 +25,11 @@ private:
     std::vector<sf::Sprite> m_brojeviZaBiranje;
     std::vector<sf::CircleShape> m_body;
 
+    int flag = 0;
     int m_counter = 0;
     int asd = 0;
-
     int counterI = 0;
+
 
     sf::Texture m_txBox;
     sf::Texture m_uplatiTx;
@@ -48,5 +50,4 @@ private:
     std::string str2;
     std::string s;
 
-    int flag = 0;
 };
