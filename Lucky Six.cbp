@@ -52,6 +52,7 @@
 			<Add directory="C:/Program Files (x86)/SFML-2.4.2/lib" />
 		</Linker>
 		<Unit filename="include/Izvlacenje.h" />
+		<Unit filename="include/Lista.h" />
 		<Unit filename="include/Loptica.h" />
 		<Unit filename="include/Texts.h" />
 		<Unit filename="include/Tiketi.h" />
@@ -68,6 +69,7 @@
 		<Unit filename="sfml-window-2.dll" />
 		<Unit filename="sfml-window-d-2.dll" />
 		<Unit filename="src/Izvlacenje.cpp" />
+		<Unit filename="src/Lista.cpp" />
 		<Unit filename="src/Loptica.cpp" />
 		<Unit filename="src/Texts.cpp" />
 		<Unit filename="src/Tiketi.cpp" />

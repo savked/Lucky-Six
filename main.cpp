@@ -2,6 +2,7 @@
 #include<Loptica.h>
 #include<Izvlacenje.h>
 #include<Timer.h>
+#include<Lista.h>
 
 int main()
 {
@@ -21,6 +22,7 @@ int main()
     Izvlacenje iz;
     Timer t;
     Tiketi ti;
+    Lista lis;
 
     sf::Sprite exit;
     sf::Texture txExit;
@@ -53,6 +55,8 @@ int main()
             ti.unosUloga(event);
             ti.clickedOnNumber(event);
             ti.uplatiClicked(event);
+
+            ti.listaClicked(event, startFlag);
         }
 
         window.clear();
@@ -61,12 +65,13 @@ int main()
 
         t.timerDone(startFlag);
 
-        if(startFlag == 1)
+        switch(startFlag)
         {
+        case 1:
             l.Draw(window);
 
-            if(i > 0)
-                Sleep(2500);
+            //if(i > 0)
+            //  Sleep(2500);
 
             iz.Draw(i, window);
             iz.DrawVeliki(i, window);
@@ -76,15 +81,18 @@ int main()
                 iz.Draw(j, window);
                 iz.DrawVeliki(i, window);
             }
-
             i++;
-        }
-        else if(startFlag == 2)
-        {
+            break;
+        case 2:
             ti.Draw(window);
-        }
-        else
+            break;
+        case 3:
+            lis.Draw(window);
+            break;
+        default:
             t.Draw(window);
+            break;
+        }
 
         window.display();
     }

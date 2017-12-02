@@ -14,14 +14,20 @@ public:
     void unosUloga(sf::Event &event);
     void clickedOnNumber(sf::Event &event);
     void uplatiClicked(sf::Event &event);
+    void listaClicked(sf::Event &event, int &startFlag);
 
     void setBrojeve();
     void Ispis();
 
-private:
+protected:
     std::vector<std::string> m_imena;
     std::vector<int> m_brojevi;
     std::vector<int> m_ulog;
+
+    sf::Font m_font;
+    int flagLista = 0;
+
+private:
     std::vector<sf::Sprite> m_brojeviZaBiranje;
     std::vector<sf::CircleShape> m_body;
 
@@ -33,13 +39,14 @@ private:
 
     sf::Texture m_txBox;
     sf::Texture m_uplatiTx;
+    sf::Texture m_txLista;
     std::vector<sf::Texture> m_lopticeTx;
 
     sf::Sprite m_imenaBox;
     sf::Sprite m_ulogBox;
     sf::Sprite m_uplatiBox;
+    sf::Sprite m_listaBox;
 
-    sf::Font m_font;
 
     sf::Text m_txtImena;
     sf::Text m_txtUlog;

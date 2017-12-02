@@ -4,9 +4,14 @@ Tiketi::Tiketi()
 {
     m_txBox.loadFromFile("slike/box.png");
     m_uplatiTx.loadFromFile("slike/uplati.png");
+    m_txLista.loadFromFile("slike/lista.png");
 
     m_uplatiBox.setTexture(m_uplatiTx);
     m_uplatiBox.setPosition(sf::Vector2f(450.0f, 920.0f));
+
+    m_listaBox.setTexture(m_txLista);
+    m_listaBox.setPosition(sf::Vector2f(1000.0f, 920.0f));
+    m_listaBox.scale(sf::Vector2f(0.5f, 0.5f));
 
 
     m_lopticeTx.resize(49);
@@ -82,6 +87,14 @@ void Tiketi::setBrojeve()
             m_brojeviZaBiranje[i].setPosition(sf::Vector2f(m_brojeviZaBiranje[i-1].getPosition().x + 100, m_brojeviZaBiranje[i-1].getPosition().y));
     }
 }
+void Tiketi::listaClicked(sf::Event &event, int &startFlag)
+{
+if(event.type == sf::Event::MouseButtonPressed)
+    if(event.mouseButton.button == sf::Mouse::Left)
+        if(m_listaBox.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
+            startFlag = 3;
+
+}
 void Tiketi::clickedOnNumber(sf::Event &event)
 {
     for(unsigned int i = 0; i < m_brojeviZaBiranje.size(); i++)
@@ -143,6 +156,7 @@ void Tiketi::uplatiClicked(sf::Event &event)
 
                 asd++;
                 Ispis();
+                flagLista = 1;
                 // reset everything to default
                 setBrojeve();
                 flag = 0;
@@ -232,6 +246,7 @@ void Tiketi::Draw(sf::RenderWindow &m_window)
     m_window.draw(m_imenaBox);
     m_window.draw(m_ulogBox);
     m_window.draw(m_uplatiBox);
+    m_window.draw(m_listaBox);
 
     m_window.draw(m_txtImena);
     m_window.draw(m_txtUlog);
