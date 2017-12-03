@@ -4,15 +4,9 @@ Tiketi::Tiketi()
 {
     m_txBox.loadFromFile("slike/box.png");
     m_uplatiTx.loadFromFile("slike/uplati.png");
-    m_txLista.loadFromFile("slike/lista.png");
 
     m_uplatiBox.setTexture(m_uplatiTx);
     m_uplatiBox.setPosition(sf::Vector2f(450.0f, 920.0f));
-
-    m_listaBox.setTexture(m_txLista);
-    m_listaBox.setPosition(sf::Vector2f(1000.0f, 920.0f));
-    m_listaBox.scale(sf::Vector2f(0.5f, 0.5f));
-
 
     m_lopticeTx.resize(49);
     for(unsigned i = 1; i < m_lopticeTx.size(); i++)
@@ -61,6 +55,127 @@ Tiketi::Tiketi()
     m_txtImena.setString("Ime");
     m_txtUlog.setString("Ulog");
 }
+void Tiketi::Winnings()
+{
+    /*srand(time(0));
+
+    std::vector<int> brojevi;
+	std::vector<int> izvuceniBrojevi;
+	std::vector<int> kvote;
+
+	long int dobitak = 0;
+	int ulog = 0;
+
+	brojevi.resize(6);
+	izvuceniBrojevi.resize(48);
+	kvote.resize(30);
+
+    /// INITIALIZING RANDOM NUMBERS
+
+	int j = 1;
+	for(unsigned int i = 0; i < izvuceniBrojevi.size(); i++)
+    {
+        izvuceniBrojevi[i] = j;
+
+        j++;
+    }
+
+    izvuceniBrojevi.resize(35);
+
+    //std::random_shuffle(izvuceniBrojevi.begin(), izvuceniBrojevi.end());
+
+    /// KVOTE
+    kvote[0] = 10000;
+    kvote[1] = 7500;
+    kvote[2] = 5000;
+    kvote[3] = 2500;
+    kvote[4] = 1000;
+    kvote[5] = 500;
+    kvote[6] = 300;
+    kvote[7] = 200;
+    kvote[8] = 150;
+    kvote[9] = 100;
+    kvote[10] = 90;
+    kvote[11] = 80;
+    kvote[12] = 70;
+    kvote[13] = 60;
+    kvote[14] = 50;
+    kvote[15] = 40;
+    kvote[16] = 30;
+    kvote[17] = 25;
+    kvote[18] = 20;
+    kvote[19] = 15;
+    kvote[20] = 10;
+    kvote[21] = 9;
+    kvote[22] = 8;
+    kvote[23] = 7;
+    kvote[24] = 6;
+    kvote[25] = 5;
+    kvote[26] = 4;
+    kvote[27] = 3;
+    kvote[28] = 2;
+    kvote[29] = 1;
+
+
+    /// USER INPUT
+
+    std::cout << "Unos: ";
+	for(unsigned int i = 0; i < brojevi.size(); i++)
+		std::cin >> brojevi[i];
+    std::cout << "Ulog: ";
+
+    std::cin >> ulog;
+
+	std::cout << std::endl;
+
+	std::cout << "Brojevi: ";
+
+	for(unsigned int i = 0; i < brojevi.size(); i++)
+		std::cout << brojevi[i] << " ";
+
+
+	/// COMPARISON
+
+	int counter = 0;
+
+	for(unsigned int i = 0; i < brojevi.size(); i++)
+    {
+        for(unsigned int j = 0; j < izvuceniBrojevi.size(); j++)
+        {
+            if(brojevi[i] == izvuceniBrojevi[j])
+            {
+                counter++;
+                if(counter == 6)
+                {
+                    dobitak = kvote[i - 5] * ulog;
+                }
+                else
+                {
+                    dobitak = -ulog;
+                }
+            }
+        }
+    }
+
+    /// COUT RANDOM NUMBERS
+    std::cout << std::endl;
+    std::cout << "Izvuceni brojevi: ";
+    std::cout << std::endl;
+    for(unsigned int i = 0; i < izvuceniBrojevi.size(); i++)
+    {
+        std::cout << izvuceniBrojevi[i] << std::endl;
+    }
+
+    /// COUT NUMBER OF GUESSED
+    std::cout << std::endl;
+    std::cout <<     "POGODJENIH: ";
+    std::cout << counter;
+
+    /// COUT DOBITAK
+    std::cout << std::endl;
+
+    std::cout << "DOBITAK: " << dobitak; */
+}
 void Tiketi::setBrojeve()
 {
     for(unsigned int i = 0; i < m_brojeviZaBiranje.size(); i++)
@@ -86,14 +201,6 @@ void Tiketi::setBrojeve()
         else if(i > 41 && i <= 48)
             m_brojeviZaBiranje[i].setPosition(sf::Vector2f(m_brojeviZaBiranje[i-1].getPosition().x + 100, m_brojeviZaBiranje[i-1].getPosition().y));
     }
-}
-void Tiketi::listaClicked(sf::Event &event, int &startFlag)
-{
-if(event.type == sf::Event::MouseButtonPressed)
-    if(event.mouseButton.button == sf::Mouse::Left)
-        if(m_listaBox.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
-            startFlag = 3;
-
 }
 void Tiketi::clickedOnNumber(sf::Event &event)
 {
@@ -171,12 +278,17 @@ void Tiketi::Ispis()
     //ispis imena i uloge
     for(unsigned int i = 0; i < m_imena.size(); i++)
     {
-        std::cout << m_imena[i] << std::endl;
-        std::cout << m_ulog[i] << std::endl;
+        if(m_imena[i] != "0")
+            std::cout << m_imena[i] << std::endl;
+        if(m_ulog[i] != 0)
+            std::cout << m_ulog[i] << std::endl;
     }
     // ispis brojeva
     for(unsigned int i = 0; i < m_brojevi.size(); i++)
-        std::cout << m_brojevi[i] << std::endl;
+    {
+        if(m_brojevi[i] != 0)
+            std::cout << m_brojevi[i] << std::endl;
+    }
 }
 void Tiketi::unosImena(sf::Event &event)
 {
@@ -231,6 +343,11 @@ void Tiketi::unosUloga(sf::Event &event)
         }
     }
 }
+void Tiketi::PressedEscape(int &startFlag)
+{
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+        startFlag = 4;
+}
 void Tiketi::Draw(sf::RenderWindow &m_window)
 {
     // drawing empty circles
@@ -246,7 +363,6 @@ void Tiketi::Draw(sf::RenderWindow &m_window)
     m_window.draw(m_imenaBox);
     m_window.draw(m_ulogBox);
     m_window.draw(m_uplatiBox);
-    m_window.draw(m_listaBox);
 
     m_window.draw(m_txtImena);
     m_window.draw(m_txtUlog);

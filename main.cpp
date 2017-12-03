@@ -41,22 +41,18 @@ int main()
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-                window.close();
-
             if(event.type == sf::Event::MouseButtonPressed)
                 if(event.mouseButton.button == sf::Mouse::Left)
                     if(exit.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
                         window.close();
 
             t.clickedOn(event, startFlag);
+            ti.PressedEscape(startFlag);
 
             ti.unosImena(event);
             ti.unosUloga(event);
             ti.clickedOnNumber(event);
             ti.uplatiClicked(event);
-
-            ti.listaClicked(event, startFlag);
         }
 
         window.clear();
@@ -67,7 +63,7 @@ int main()
 
         switch(startFlag)
         {
-        case 1:
+        case 1:         // izvlacenje
             l.Draw(window);
 
             //if(i > 0)
@@ -81,15 +77,17 @@ int main()
                 iz.Draw(j, window);
                 iz.DrawVeliki(i, window);
             }
+
             i++;
+
             break;
-        case 2:
+        case 2:     // tiket
             ti.Draw(window);
             break;
-        case 3:
+        case 3:     // lista
             lis.Draw(window);
             break;
-        default:
+        default:    // timer
             t.Draw(window);
             break;
         }
