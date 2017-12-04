@@ -23,8 +23,8 @@ private:
     sf::Texture m_txBox;
 
     char nula = '0';
-    int m_minuti = 5;
-    int m_sekunde = 59;
+    int m_minuti = 1;
+    int m_sekunde = 0;
 
     int pausedMin;
     int pausedSek;

@@ -21,10 +21,13 @@ Timer::Timer()
 void Timer::povecaj()
 {
     if(m_minuti == 0 && m_sekunde == 0)
-        m_timerText.setString("00:00");
+    {
+        m_minuti = 1;
+        m_sekunde = 0;
+    }
     else
     {
-        //Sleep(1000);
+        Sleep(1000);
         m_sekunde--;
     }
 
@@ -48,7 +51,7 @@ std::string Timer::to_string(int i)
 void Timer::Draw(sf::RenderWindow &m_window)
 {
     povecaj();
-    m_window.draw(m_noviTiket);
+    //m_window.draw(m_noviTiket);
     m_window.draw(m_timerTxt);
     m_window.draw(m_timerText);
 }
