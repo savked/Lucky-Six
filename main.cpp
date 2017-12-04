@@ -69,12 +69,12 @@ int main()
             if(i > 0)
                 Sleep(2500);
 
-            iz.Draw(i, window, startFlag);
+            iz.Draw(i, window);
             iz.DrawVeliki(i, window);
 
             for(int j = 0; j < i; j++)
             {
-                iz.Draw(j, window, startFlag);
+                iz.Draw(j, window);
                 iz.DrawVeliki(i, window);
             }
 
