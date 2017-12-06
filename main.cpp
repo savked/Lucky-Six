@@ -66,8 +66,8 @@ int main()
         case 1:         // izvlacenje
             l.Draw(window);
 
-            //if(i > 0)
-                //Sleep(2500);
+            if(i > 0)
+                Sleep(2500);
 
             iz.Draw(i, window);
             iz.DrawVeliki(i, window);
