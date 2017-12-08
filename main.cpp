@@ -63,7 +63,7 @@ int main()
 
         switch(startFlag)
         {
-        case 1:         // izvlacenje
+        case 1:     // izvlacenje
             l.Draw(window);
 
             if(i > 0)
@@ -78,7 +78,7 @@ int main()
                 iz.DrawVeliki(i, window);
             }
 
-            i++;
+            ++i;
             break;
         case 2:     // tiket
             ti.Draw(window);

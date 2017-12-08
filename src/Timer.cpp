@@ -51,7 +51,7 @@ std::string Timer::to_string(int i)
 void Timer::Draw(sf::RenderWindow &m_window)
 {
     povecaj();
-    //m_window.draw(m_noviTiket);
+    m_window.draw(m_noviTiket);
     m_window.draw(m_timerTxt);
     m_window.draw(m_timerText);
 }
