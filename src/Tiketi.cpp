@@ -18,20 +18,9 @@ Tiketi::Tiketi()
     for(unsigned int i = 0; i < m_brojeviZaBiranje.size(); i++)
         m_brojeviZaBiranje[i].setTexture(m_lopticeTx[i]);
 
-    // setting up the empty circles
-    m_body.resize(6);
-    for(unsigned int i = 0; i < m_body.size(); i++)
-    {
-        m_body[i].setRadius(30.0f);
-        m_body[i].setFillColor(sf::Color(128,128,128,200));
-        m_body[i].setOutlineColor(sf::Color(210,210,210, 255));
-        m_body[i].setOutlineThickness(2.0f);
-
-        if(i == 0)
-            m_body[i].setPosition(sf::Vector2f(350.0f, 250.0f));
-        else
-            m_body[i].setPosition(sf::Vector2f(m_body[i-1].getPosition().x + 100, m_body[i-1].getPosition().y));
-    }
+    // setting up the already clicked
+    for(int i = 0; i < 48; i++)
+        alreadyClicked[i] = 0;
 
     setBrojeve();
 
@@ -59,37 +48,55 @@ void Tiketi::setBrojeve()
 {
     for(unsigned int i = 0; i < m_brojeviZaBiranje.size(); i++)
     {
+        m_brojeviZaBiranje[i].setColor(sf::Color(255, 255, 255, 50));
         if(i == 0)
-            m_brojeviZaBiranje[i].setPosition(sf::Vector2f(50.0f, 400.0f));
+            m_brojeviZaBiranje[i].setPosition(sf::Vector2f(50.0f, 300.0f));
         else if(i > 0 && i <= 10)
             m_brojeviZaBiranje[i].setPosition(sf::Vector2f(m_brojeviZaBiranje[i-1].getPosition().x + 100, m_brojeviZaBiranje[i-1].getPosition().y));
         else if(i == 11)
-            m_brojeviZaBiranje[i].setPosition(sf::Vector2f(150.0f, 500.0f));
+            m_brojeviZaBiranje[i].setPosition(sf::Vector2f(150.0f, 400.0f));
         else if(i > 11 && i <= 20)
             m_brojeviZaBiranje[i].setPosition(sf::Vector2f(m_brojeviZaBiranje[i-1].getPosition().x + 100, m_brojeviZaBiranje[i-1].getPosition().y));
         else if(i == 21)
-            m_brojeviZaBiranje[i].setPosition(sf::Vector2f(150.0f, 600.0f));
+            m_brojeviZaBiranje[i].setPosition(sf::Vector2f(150.0f, 500.0f));
         else if(i > 21 && i <= 30)
             m_brojeviZaBiranje[i].setPosition(sf::Vector2f(m_brojeviZaBiranje[i-1].getPosition().x + 100, m_brojeviZaBiranje[i-1].getPosition().y));
         else if(i == 31)
-            m_brojeviZaBiranje[i].setPosition(sf::Vector2f(150.0f, 700.0f));
+            m_brojeviZaBiranje[i].setPosition(sf::Vector2f(150.0f, 600.0f));
         else if(i > 31 && i <= 40)
             m_brojeviZaBiranje[i].setPosition(sf::Vector2f(m_brojeviZaBiranje[i-1].getPosition().x + 100, m_brojeviZaBiranje[i-1].getPosition().y));
         else if(i == 41)
-            m_brojeviZaBiranje[i].setPosition(sf::Vector2f(250.0f, 800.0f));
+            m_brojeviZaBiranje[i].setPosition(sf::Vector2f(250.0f, 700.0f));
         else if(i > 41 && i <= 48)
             m_brojeviZaBiranje[i].setPosition(sf::Vector2f(m_brojeviZaBiranje[i-1].getPosition().x + 100, m_brojeviZaBiranje[i-1].getPosition().y));
     }
 }
 void Tiketi::clickedOnNumber(sf::Event &event)
 {
+    tempBrojevi.resize(6);
+
     for(unsigned int i = 0; i < m_brojeviZaBiranje.size(); i++)
     {
         if(event.type == sf::Event::MouseButtonPressed)
             if(event.mouseButton.button == sf::Mouse::Left)
                 if(m_brojeviZaBiranje[i].getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
                 {
-                    switch(m_counter)
+                    if(alreadyClicked[i] == 0)
+                    {
+                        m_brojeviZaBiranje[i].setColor(sf::Color(255, 255, 255, 255));
+                        alreadyClicked[i] = 1;
+                        for(int j = 0; j < 6; j++)
+                            tempBrojevi[j] = i;
+                    }
+                    else
+                    {
+                        m_brojeviZaBiranje[i].setColor(sf::Color(255, 255, 255, 50));
+                        alreadyClicked[i] = 0;
+                        for(int j = 0; j < 6; j++)
+                            tempBrojevi[j] = 0;
+                    }
+
+                    /*switch(m_counter)
                     {
                     case 0:
                         m_brojeviZaBiranje[i].setPosition(sf::Vector2f(350.0f, 250.0f));
@@ -124,7 +131,7 @@ void Tiketi::clickedOnNumber(sf::Event &event)
                     }
                     m_counter++;
                     if(m_counter > 6)
-                        m_counter = 0;
+                        m_counter = 0;*/
                 }
     }
 }
@@ -222,18 +229,8 @@ void Tiketi::unosUloga(sf::Event &event)
         }
     }
 }
-void Tiketi::PressedEscape(int &startFlag)
-{
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-        startFlag = 4;
-}
 void Tiketi::Draw(sf::RenderWindow &m_window)
 {
-    // drawing empty circles
-    for(unsigned int i = 0; i < m_body.size(); i++)
-    {
-        m_window.draw(m_body[i]);
-    }
     // draw numbers
     for(unsigned int i = 0; i < m_brojeviZaBiranje.size(); i++)
     {

@@ -46,8 +46,10 @@ int main()
                     if(exit.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
                         window.close();
 
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+                window.close();
+
             t.clickedOn(event, startFlag);
-            ti.PressedEscape(startFlag);
 
             ti.unosImena(event);
             ti.unosUloga(event);
@@ -66,8 +68,8 @@ int main()
         case 1:     // izvlacenje
             l.Draw(window);
 
-            if(i > 0)
-                Sleep(2500);
+            //if(i > 0)
+              //  Sleep(2500);
 
             iz.Draw(i, window);
             iz.DrawVeliki(i, window);

@@ -27,7 +27,7 @@ void Timer::povecaj()
     }
     else
     {
-        //Sleep(1000);
+        Sleep(1000);
         m_sekunde--;
     }
 

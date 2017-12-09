@@ -14,7 +14,6 @@ public:
     void unosUloga(sf::Event &event);
     void clickedOnNumber(sf::Event &event);
     void uplatiClicked(sf::Event &event);
-    void PressedEscape(int &startFlag);
 
     void setBrojeve();
     void Ispis();
@@ -29,7 +28,9 @@ protected:
 
 private:
     std::vector<sf::Sprite> m_brojeviZaBiranje;
-    std::vector<sf::CircleShape> m_body;
+
+    int alreadyClicked[48];
+    std::vector<int> tempBrojevi;
 
     int flag = 0;
     int m_counter = 0;
