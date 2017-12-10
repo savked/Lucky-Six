@@ -29,10 +29,10 @@ protected:
 private:
     std::vector<sf::Sprite> m_brojeviZaBiranje;
 
-    int alreadyClicked[48];
-    std::vector<int> tempBrojevi;
+    std::vector<int> alreadyClicked;
 
     int flag = 0;
+    int tempJ = 0;
     int m_counter = 0;
     int asd = 0;
     int counterI = 0;

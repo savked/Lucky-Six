@@ -19,7 +19,8 @@ Tiketi::Tiketi()
         m_brojeviZaBiranje[i].setTexture(m_lopticeTx[i]);
 
     // setting up the already clicked
-    for(int i = 0; i < 48; i++)
+    alreadyClicked.resize(48);
+    for(unsigned int i = 0; i < alreadyClicked.size(); i++)
         alreadyClicked[i] = 0;
 
     setBrojeve();
@@ -73,8 +74,6 @@ void Tiketi::setBrojeve()
 }
 void Tiketi::clickedOnNumber(sf::Event &event)
 {
-    tempBrojevi.resize(6);
-
     for(unsigned int i = 0; i < m_brojeviZaBiranje.size(); i++)
     {
         if(event.type == sf::Event::MouseButtonPressed)
@@ -83,73 +82,45 @@ void Tiketi::clickedOnNumber(sf::Event &event)
                 {
                     if(alreadyClicked[i] == 0)
                     {
-                        m_brojeviZaBiranje[i].setColor(sf::Color(255, 255, 255, 255));
-                        alreadyClicked[i] = 1;
-                        for(int j = 0; j < 6; j++)
-                            tempBrojevi[j] = i;
+                        if(m_counter <= 5)
+                        {
+                            m_brojeviZaBiranje[i].setColor(sf::Color(255, 255, 255, 255));
+                            alreadyClicked[i] = 1;
+                            m_counter++;
+                        }
                     }
                     else
                     {
                         m_brojeviZaBiranje[i].setColor(sf::Color(255, 255, 255, 50));
                         alreadyClicked[i] = 0;
-                        for(int j = 0; j < 6; j++)
-                            tempBrojevi[j] = 0;
+                        m_counter--;
                     }
-
-                    /*switch(m_counter)
-                    {
-                    case 0:
-                        m_brojeviZaBiranje[i].setPosition(sf::Vector2f(350.0f, 250.0f));
-                        m_brojevi[counterI] = i;
-                        counterI++;
-                        break;
-                    case 1:
-                        m_brojeviZaBiranje[i].setPosition(sf::Vector2f(450.0f, 250.0f));
-                        m_brojevi[counterI] = i;
-                        counterI++;
-                        break;
-                    case 2:
-                        m_brojeviZaBiranje[i].setPosition(sf::Vector2f(550.0f, 250.0f));
-                        m_brojevi[counterI] = i;
-                        counterI++;
-                        break;
-                    case 3:
-                        m_brojeviZaBiranje[i].setPosition(sf::Vector2f(650.0f, 250.0f));
-                        m_brojevi[counterI] = i;
-                        counterI++;
-                        break;
-                    case 4:
-                        m_brojeviZaBiranje[i].setPosition(sf::Vector2f(750.0f, 250.0f));
-                        m_brojevi[counterI] = i;
-                        counterI++;
-                        break;
-                    case 5:
-                        m_brojeviZaBiranje[i].setPosition(sf::Vector2f(850.0f, 250.0f));
-                        m_brojevi[counterI] = i;
-                        counterI++;
-                        break;
-                    }
-                    m_counter++;
-                    if(m_counter > 6)
-                        m_counter = 0;*/
                 }
     }
 }
 void Tiketi::uplatiClicked(sf::Event &event)
 {
-    m_brojevi.resize(50);
+    m_brojevi.resize(6);
     m_imena.resize(50);
     m_ulog.resize(50);
+
     if(event.type == sf::Event::MouseButtonPressed)
         if(event.mouseButton.button == sf::Mouse::Left)
             if(m_uplatiBox.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
             {
                 m_imena[asd] = str1;
                 m_ulog[asd] = atoi(str2.c_str());
+                for(unsigned int i = 0; i < alreadyClicked.size(); i++)
+                {
+                    if(alreadyClicked[i] == 1)
+                    {
+                        m_brojevi[tempJ] = i;
+                        tempJ++;
+                    }
+                }
 
                 asd++;
                 Ispis();
-                flagLista = 1;
                 // reset everything to default
                 setBrojeve();
                 flag = 0;
