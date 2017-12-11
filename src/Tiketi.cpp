@@ -100,7 +100,7 @@ void Tiketi::clickedOnNumber(sf::Event &event)
 }
 void Tiketi::uplatiClicked(sf::Event &event)
 {
-    m_brojevi.resize(6);
+    m_brojevi.resize(50);
     m_imena.resize(50);
     m_ulog.resize(50);
 
@@ -123,6 +123,7 @@ void Tiketi::uplatiClicked(sf::Event &event)
                 Ispis();
                 // reset everything to default
                 setBrojeve();
+                m_counter = 0;
                 flag = 0;
                 str1 = "";
                 m_enteredIme.setString("");
@@ -135,7 +136,7 @@ void Tiketi::Ispis()
     //ispis imena i uloge
     for(unsigned int i = 0; i < m_imena.size(); i++)
     {
-        if(m_imena[i] != "0")
+        if(m_imena[i] != "")
             std::cout << m_imena[i] << std::endl;
         if(m_ulog[i] != 0)
             std::cout << m_ulog[i] << std::endl;
