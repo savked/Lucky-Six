@@ -80,6 +80,7 @@ void Tiketi::clickedOnNumber(sf::Event &event)
             if(event.mouseButton.button == sf::Mouse::Left)
                 if(m_brojeviZaBiranje[i].getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
                 {
+                    std::cout << "M_COUNTER: " << m_counter << std::endl;
                     if(alreadyClicked[i] == 0)
                     {
                         if(m_counter <= 5)
@@ -123,6 +124,8 @@ void Tiketi::uplatiClicked(sf::Event &event)
                 Ispis();
                 // reset everything to default
                 setBrojeve();
+                for(unsigned int i = 0; i < alreadyClicked.size(); i++)
+                    alreadyClicked[i] = 0;
                 m_counter = 0;
                 flag = 0;
                 str1 = "";
