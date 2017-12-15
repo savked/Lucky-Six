@@ -66,33 +66,37 @@ int main()
         switch(startFlag)
         {
         case 1:     // izvlacenje
+
+            if(i > 34)
+            {
+                lis.Draw(window);
+                break;
+            }
+
             l.Draw(window);
 
             //if(i > 0)
               //  Sleep(2500);
 
             iz.Draw(i, window);
-            iz.DrawVeliki(i, window);
 
             for(int j = 0; j < i; j++)
             {
                 iz.Draw(j, window);
                 iz.DrawVeliki(i, window);
+
             }
 
             ++i;
+
             break;
         case 2:     // tiket
             ti.Draw(window);
-            break;
-        case 3:     // lista
-            lis.Draw(window);
             break;
         default:    // timer
             t.Draw(window);
             break;
         }
-
         window.display();
     }
 

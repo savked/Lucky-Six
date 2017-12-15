@@ -25,8 +25,8 @@ Izvlacenje::Izvlacenje()
     }
     std::random_shuffle(m_moguciBrojevi.begin(), m_moguciBrojevi.end());
 
-    m_izvucenBroj.resize(36);
-    m_velikiBrojevi.resize(36);
+    m_izvucenBroj.resize(35);
+    m_velikiBrojevi.resize(35);
 
 }
 void Izvlacenje::Draw(int i, sf::RenderWindow &m_window)

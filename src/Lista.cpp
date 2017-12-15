@@ -2,7 +2,7 @@
 
 Lista::Lista()
 {
-    m_lines.resize(m_imena.size());
+    m_lines.resize(5);
     m_imenaTxt.resize(m_imena.size());
     m_ulogTxt.resize(m_ulog.size());
 

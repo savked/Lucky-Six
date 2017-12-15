@@ -124,9 +124,11 @@ void Tiketi::uplatiClicked(sf::Event &event)
                 Ispis();
                 // reset everything to default
                 setBrojeve();
+                m_counter = 0;
+
                 for(unsigned int i = 0; i < alreadyClicked.size(); i++)
                     alreadyClicked[i] = 0;
-                m_counter = 0;
+
                 flag = 0;
                 str1 = "";
                 m_enteredIme.setString("");
