@@ -6,6 +6,7 @@ Recreation of a gambling game "Lucky Six" using SFML (Simple Fast Multimedia Lib
 ![Alt text](https://github.com/savked/Lucky-Six/blob/master/screenshots/Screenshot_2.png?raw=true)
 # Currently working on
 I am currently working on feature "tickets" where users can choose their names, bet money and their numbers
+![Alt text](https://github.com/savked/Lucky-Six/blob/master/screenshots/Screenshot_3.png?raw=true)
 
 # How to play 
 Download the latest build in releases tab and run Lucky-Six.exe file.
