@@ -14,6 +14,7 @@ public:
     void unosUloga(sf::Event &event);
     void clickedOnNumber(sf::Event &event);
     void uplatiClicked(sf::Event &event);
+    void backClicked(sf::Event &event, int &startFlag);
 
     void setBrojeve();
     void Ispis();
@@ -27,8 +28,8 @@ protected:
     int flagLista = 0;
 
 private:
+    std::vector<sf::Texture> m_lopticeTx;
     std::vector<sf::Sprite> m_brojeviZaBiranje;
-
     std::vector<int> alreadyClicked;
 
     int flag = 0;
@@ -40,11 +41,12 @@ private:
 
     sf::Texture m_txBox;
     sf::Texture m_uplatiTx;
-    std::vector<sf::Texture> m_lopticeTx;
+    sf::Texture m_backTx;
 
     sf::Sprite m_imenaBox;
     sf::Sprite m_ulogBox;
     sf::Sprite m_uplatiBox;
+    sf::Sprite m_back;
 
 
     sf::Text m_txtImena;

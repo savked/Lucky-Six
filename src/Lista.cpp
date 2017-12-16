@@ -23,19 +23,22 @@ Lista::Lista()
         m_lines[i].setFillColor(sf::Color::White);
         m_lines[i].setPosition(sf::Vector2f(0.0f, 75.0f));
     }
+    // getting names to vector
+    for(unsigned int i = 0; i < m_imenaTxt.size(); i++)
+    {
+        m_imenaTxt[i].setString(m_imena[i]);
+        m_imenaTxt[i].setPosition(sf::Vector2f(100.0f, 100.0f));
+    }
 }
 void Lista::Draw(sf::RenderWindow &m_window)
 {
-    if(m_lines.size() > 0)
+    for(unsigned int i = 0; i < m_lines.size(); i++)
     {
-        for(unsigned int i = 0; i < m_lines.size(); i++)
-        {
-            m_window.draw(m_lines[i]);
-        }
-        for(unsigned int i = 0; i < m_imenaTxt.size(); i++)
-        {
-            m_window.draw(m_imenaTxt[i]);
-            m_window.draw(m_ulogTxt[i]);
-        }
+        m_window.draw(m_lines[i]);
+    }
+    for(unsigned int i = 0; i < m_imenaTxt.size(); i++)
+    {
+        m_window.draw(m_imenaTxt[i]);
+        m_window.draw(m_ulogTxt[i]);
     }
 }

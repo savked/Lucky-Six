@@ -4,6 +4,7 @@ Tiketi::Tiketi()
 {
     m_txBox.loadFromFile("slike/box.png");
     m_uplatiTx.loadFromFile("slike/uplati.png");
+    m_backTx.loadFromFile("slike/back.png");
 
     m_uplatiBox.setTexture(m_uplatiTx);
     m_uplatiBox.setPosition(sf::Vector2f(450.0f, 920.0f));
@@ -29,6 +30,7 @@ Tiketi::Tiketi()
 
     m_imenaBox.setTexture(m_txBox);
     m_ulogBox.setTexture(m_txBox);
+    m_back.setTexture(m_backTx);
 
     m_txtImena.setFont(m_font);
     m_txtUlog.setFont(m_font);
@@ -38,9 +40,12 @@ Tiketi::Tiketi()
 
     m_imenaBox.setPosition(sf::Vector2f(200.0f, 100.0f));
     m_ulogBox.setPosition(sf::Vector2f(700.0f, 100.0f));
+    m_back.setPosition(sf::Vector2f(20.0f, 05.0f));
 
     m_txtImena.setPosition(sf::Vector2f(340.0f, 50.0f));
     m_txtUlog.setPosition(sf::Vector2f(840.0f, 50.0f));
+
+    m_back.setScale(sf::Vector2f(0.3f, 0.3f));
 
     m_txtImena.setString("Ime");
     m_txtUlog.setString("Ulog");
@@ -71,6 +76,13 @@ void Tiketi::setBrojeve()
         else if(i > 41 && i <= 48)
             m_brojeviZaBiranje[i].setPosition(sf::Vector2f(m_brojeviZaBiranje[i-1].getPosition().x + 100, m_brojeviZaBiranje[i-1].getPosition().y));
     }
+}
+void Tiketi::backClicked(sf::Event &event, int &startFlag)
+{
+    if(event.type == sf::Event::MouseButtonPressed)
+        if(event.mouseButton.button == sf::Mouse::Left)
+            if(m_back.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
+                startFlag = 3;
 }
 void Tiketi::clickedOnNumber(sf::Event &event)
 {
@@ -213,6 +225,9 @@ void Tiketi::Draw(sf::RenderWindow &m_window)
     {
         m_window.draw(m_brojeviZaBiranje[i]);
     }
+
+    m_window.draw(m_back);
+
     m_window.draw(m_imenaBox);
     m_window.draw(m_ulogBox);
     m_window.draw(m_uplatiBox);

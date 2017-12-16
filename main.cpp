@@ -46,8 +46,8 @@ int main()
                     if(exit.getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
                         window.close();
 
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-                window.close();
+
+            ti.backClicked(event, startFlag);
 
             t.clickedOn(event, startFlag);
 
@@ -67,7 +67,7 @@ int main()
         {
         case 1:     // izvlacenje
 
-            if(i > 34)
+            if(i > 35)
             {
                 lis.Draw(window);
                 break;
