@@ -20,7 +20,7 @@ public:
     void Ispis();
 
 protected:
-    std::vector<std::string> m_imena;
+    std::vector<sf::String> m_imena;
     std::vector<int> m_brojevi;
     std::vector<int> m_ulog;
 

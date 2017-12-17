@@ -441,12 +441,12 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1513447443 c:\users\savke\documents\sfml projects\lucky six\include\tiketi.h
+1513540531 c:\users\savke\documents\sfml projects\lucky six\include\tiketi.h
 	<SFML/Graphics.hpp>
 	<iostream>
 	<Izvlacenje.h>
 
-1513447439 source:c:\users\savke\documents\sfml projects\lucky six\src\tiketi.cpp
+1513540554 source:c:\users\savke\documents\sfml projects\lucky six\src\tiketi.cpp
 	"Tiketi.h"
 
 1513085684 c:\users\savke\documents\sfml projects\lucky six\include\timer.h
@@ -459,7 +459,7 @@
 1513363447 source:c:\users\savke\documents\sfml projects\lucky six\src\timer.cpp
 	"Timer.h"
 
-1513446333 source:c:\users\savke\documents\sfml projects\lucky six\src\lista.cpp
+1513540582 source:c:\users\savke\documents\sfml projects\lucky six\src\lista.cpp
 	"Lista.h"
 
 1513085684 c:\users\savke\documents\sfml projects\lucky six\include\lista.h

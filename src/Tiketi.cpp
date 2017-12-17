@@ -92,7 +92,6 @@ void Tiketi::clickedOnNumber(sf::Event &event)
             if(event.mouseButton.button == sf::Mouse::Left)
                 if(m_brojeviZaBiranje[i].getGlobalBounds().contains(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y))
                 {
-                    std::cout << "M_COUNTER: " << m_counter << std::endl;
                     if(alreadyClicked[i] == 0)
                     {
                         if(m_counter <= 5)
@@ -154,7 +153,7 @@ void Tiketi::Ispis()
     for(unsigned int i = 0; i < m_imena.size(); i++)
     {
         if(m_imena[i] != "")
-            std::cout << m_imena[i] << std::endl;
+            std::cout << std::string (m_imena[i]) << std::endl;
         if(m_ulog[i] != 0)
             std::cout << m_ulog[i] << std::endl;
     }
